@@ -1,0 +1,222 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="color-scheme" content="light dark">
+    <title>Game Pac — native macOS games</title>
+    <meta
+      name="description"
+      content="Game Pac is a family of native macOS games built in SwiftUI, with keyboard and VoiceOver play, procedural sound, and automatic updates."
+    >
+    <meta property="og:type" content="website">
+    <meta property="og:site_name" content="Game Pac">
+    <meta property="og:title" content="Game Pac — native macOS games">
+    <meta
+      property="og:description"
+      content="Three native macOS games. No engines, no asset packs, one family look."
+    >
+    <meta property="og:image" content="./assets/og-game-pac.png">
+    <meta property="og:image:alt" content="The Game Pac mark on a blue game-board panel">
+    <link rel="icon" type="image/png" href="./assets/favicon.png">
+    <link rel="stylesheet" href="./style.css">
+  </head>
+  <body>
+    <a class="skip-link" href="#main-content">Skip to games</a>
+
+    <header class="site-header">
+      <a class="brand" href="#top" aria-label="Game Pac home">
+        <picture>
+          <source srcset="./assets/game-pac-mark-dark.png" media="(prefers-color-scheme: dark)">
+          <img src="./assets/game-pac-mark-light.png" alt="" width="42" height="42">
+        </picture>
+        <span>Game Pac</span>
+      </a>
+      <nav aria-label="Primary navigation">
+        <a href="#games">Games</a>
+        <a href="#collection">The Collection</a>
+        <a href="#launcher">Launcher</a>
+      </nav>
+    </header>
+
+    <main id="main-content">
+      <section class="hero" id="top" aria-labelledby="hero-title">
+        <div class="hero-copy">
+          <p class="eyebrow">Native macOS games</p>
+          <h1 id="hero-title">Game Pac</h1>
+          <p class="hero-pitch">
+            Three thoughtfully made games, built for the Mac from the first line of Swift to the last note of sound.
+          </p>
+          <a class="button button-primary" href="#games">Meet the Games</a>
+        </div>
+
+        <div class="hero-family" aria-label="The three Game Pac titles">
+          <picture class="hero-mark">
+            <source srcset="./assets/game-pac-mark-dark.png" media="(prefers-color-scheme: dark)">
+            <img
+              src="./assets/game-pac-mark-light.png"
+              alt="Game Pac mark, a rounded game-board tile"
+              width="256"
+              height="256"
+            >
+          </picture>
+          <div class="icon-row">
+            <img src="./assets/minesweeper-icon.png" alt="Mine Sweeper app icon" width="92" height="92">
+            <img src="./assets/dottie-icon.png" alt="Dottie app icon" width="92" height="92">
+            <img src="./assets/tilly-icon.png" alt="Tilly app icon" width="92" height="92">
+          </div>
+        </div>
+      </section>
+
+      <section class="games-section" id="games" aria-labelledby="games-title">
+        <div class="section-heading">
+          <p class="eyebrow">The collection</p>
+          <h2 id="games-title">Choose Your Game</h2>
+          <p>Every title is a universal Mac app for macOS 14 or later.</p>
+        </div>
+
+        <article class="game-card">
+          <div class="game-media">
+            <img
+              src="./assets/minesweeper-modern.jpg"
+              alt="Mine Sweeper in its Modern theme, showing a partly revealed board after a first cascade"
+              width="1100"
+              height="978"
+              loading="lazy"
+            >
+          </div>
+          <div class="game-copy">
+            <header class="game-title">
+              <img src="./assets/minesweeper-icon.png" alt="" width="68" height="68">
+              <div>
+                <p class="game-number">Game 01</p>
+                <h3>Mine Sweeper</h3>
+              </div>
+            </header>
+            <p>
+              A native macOS SwiftUI puzzle with four complete visual themes, four board sizes, a guided lesson, keyboard and VoiceOver play, persistent records, and procedural sound. The board, feedback, icon, and sound voices are generated in code — no game engine, sprite sheet, or audio file.
+            </p>
+            <p class="feature-line">4 themes <span>·</span> Keyboard + VoiceOver <span>·</span> Procedural sound <span>·</span> Records</p>
+            <div class="game-actions">
+              <!-- Swap to releases/latest/download/MineSweeper.dmg after the next release uploads the new permanent-link asset. -->
+              <a class="button button-primary" href="https://github.com/kudige79/minesweeper/releases/latest">Download Mine Sweeper</a>
+              <a class="text-link" href="https://github.com/kudige79/minesweeper/releases/latest">Release Notes &amp; Older Versions</a>
+            </div>
+            <p class="requirements">macOS 14 or later · signed and notarized · updates itself.</p>
+          </div>
+        </article>
+
+        <article class="game-card game-card-reverse">
+          <div class="game-media">
+            <img
+              src="./assets/dottie-modern.jpg"
+              alt="Dottie in its Modern theme at the ready screen, with the maze and four pursuers visible"
+              width="1006"
+              height="1100"
+              loading="lazy"
+            >
+          </div>
+          <div class="game-copy">
+            <header class="game-title">
+              <img src="./assets/dottie-icon.png" alt="" width="68" height="68">
+              <div>
+                <p class="game-number">Game 02</p>
+                <h3>Dottie</h3>
+              </div>
+            </header>
+            <p>
+              A native macOS SwiftUI arcade maze game whose maze, sprites, and every sound are generated in code. Steer with the keyboard through a precise 28 × 31 maze while four pursuers follow distinct chase rules.
+            </p>
+            <p class="feature-line">3 themes <span>·</span> Keyboard + VoiceOver <span>·</span> Procedural sound <span>·</span> High scores</p>
+            <div class="game-actions">
+              <a class="button button-primary" href="https://github.com/kudige79/dottie/releases/latest/download/Dottie.dmg">Download Dottie</a>
+              <a class="text-link" href="https://github.com/kudige79/dottie/releases/latest">Release Notes &amp; Older Versions</a>
+            </div>
+            <p class="requirements">macOS 14 or later · signed and notarized · updates itself.</p>
+          </div>
+        </article>
+
+        <article class="game-card">
+          <div class="game-media">
+            <img
+              src="./assets/tilly-modern.jpg"
+              alt="Tilly in its Modern theme during a game, with numbered tiles on the sliding board"
+              width="921"
+              height="1100"
+              loading="lazy"
+            >
+          </div>
+          <div class="game-copy">
+            <header class="game-title">
+              <img src="./assets/tilly-icon.png" alt="" width="68" height="68">
+              <div>
+                <p class="game-number">Game 03</p>
+                <h3>Tilly</h3>
+              </div>
+            </header>
+            <p>
+              A native macOS SwiftUI sliding-merge puzzle whose boards, four visual skins, and every sound are generated in code. Slide every tile as far as it can go, merge equal values from the leading edge, and build toward each board’s honest target.
+            </p>
+            <p class="feature-line">4 themes <span>·</span> Keyboard + VoiceOver <span>·</span> Procedural sound <span>·</span> Records</p>
+            <div class="game-actions">
+              <!-- This permanent link goes live when the owner publishes Tilly's first release. -->
+              <a class="button button-primary" href="https://github.com/kudige79/tilly/releases/latest/download/Tilly.dmg">Download Tilly</a>
+              <a class="text-link" href="https://github.com/kudige79/tilly/releases/latest">Release Notes &amp; Older Versions</a>
+            </div>
+            <p class="requirements">macOS 14 or later · signed and notarized · updates itself.</p>
+          </div>
+        </article>
+      </section>
+
+      <section class="collection-strip" id="collection" aria-labelledby="collection-title">
+        <div class="section-heading section-heading-compact">
+          <p class="eyebrow">Made as a family</p>
+          <h2 id="collection-title">Mac Games, All the Way Down</h2>
+        </div>
+        <div class="collection-grid">
+          <div class="collection-point">
+            <span class="point-mark" aria-hidden="true">01</span>
+            <h3>Native SwiftUI</h3>
+            <p>Universal apps shaped around macOS, not ports wrapped for it.</p>
+          </div>
+          <div class="collection-point">
+            <span class="point-mark" aria-hidden="true">02</span>
+            <h3>Built In Code</h3>
+            <p>No engines or asset packs. Visuals and sound belong to each game.</p>
+          </div>
+          <div class="collection-point">
+            <span class="point-mark" aria-hidden="true">03</span>
+            <h3>Self-Updating</h3>
+            <p>Signed, notarized releases keep themselves current with Sparkle.</p>
+          </div>
+          <div class="collection-point">
+            <span class="point-mark" aria-hidden="true">04</span>
+            <h3>One Family Look</h3>
+            <p>Shared Modern chrome, with a complete identity for every title.</p>
+          </div>
+        </div>
+      </section>
+
+      <section class="launcher-teaser" id="launcher" aria-labelledby="launcher-title">
+        <div class="launcher-mark" aria-hidden="true">
+          <span></span><span></span><span></span><span></span>
+        </div>
+        <div>
+          <p class="eyebrow">Coming soon</p>
+          <h2 id="launcher-title">Game Pac, the App</h2>
+          <p>
+            One native Mac launcher through which a player discovers, downloads, runs, and updates every Game Pac title — current and future.
+          </p>
+        </div>
+      </section>
+    </main>
+
+    <footer>
+      <p>Copyright © 2026 Panduranga Shenoy Kudige. All rights reserved.</p>
+      <nav aria-label="Game repositories">
+        <a href="https://github.com/kudige79/minesweeper">Mine Sweeper on GitHub</a>
+        <a href="https://github.com/kudige79/dottie">Dottie on GitHub</a>
+      </nav>
+    </footer>
+  </body>
+</html>
