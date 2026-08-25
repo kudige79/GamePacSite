@@ -45,4 +45,5 @@ no configured remote.
   links. Their packaging scripts produce the unversioned assets needed to keep
   those URLs stable across releases.
 - Tilly's permanent Download URL is already wired into the page. It will return
-  404 until the owner publishes Tilly's first release with `Tilly.dmg`.
+  404 until the owner publishes Tilly's first release with `Tilly.dmg`; its
+  release-notes link is intentionally omitted until that page exists.

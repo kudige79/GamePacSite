@@ -61,28 +61,31 @@ downsample_jpeg "${SOURCES[tilly_shot]}" "$STAGE_DIR/tilly-modern.jpg"
 CLANG_MODULE_CACHE_PATH="$STAGE_DIR/module-cache" \
     xcrun swift "$SCRIPT_DIR/render-brand.swift" "$STAGE_DIR"
 
-mkdir -p "$ASSET_DIR"
-for generated_file in \
+generated_files=(
     minesweeper-icon.png dottie-icon.png tilly-icon.png \
     minesweeper-modern.jpg dottie-modern.jpg tilly-modern.jpg \
-    game-pac-mark-light.png game-pac-mark-dark.png favicon.png og-game-pac.png; do
-    install -m 0644 "$STAGE_DIR/$generated_file" "$ASSET_DIR/$generated_file"
-done
+    game-pac-mark-light.png game-pac-mark-dark.png favicon.png og-game-pac.png
+)
 
 typeset -i total_bytes=0
-for generated_file in "$ASSET_DIR"/*; do
-    file_bytes=$(stat -f %z "$generated_file")
+for generated_file in "${generated_files[@]}"; do
+    file_bytes=$(stat -f %z "$STAGE_DIR/$generated_file")
     total_bytes+=file_bytes
     if (( file_bytes > 307200 )); then
-        print -u2 "Generated asset exceeds 300 KB: ${generated_file:t} ($file_bytes bytes)"
+        print -u2 "Generated asset exceeds 300 KB: $generated_file ($file_bytes bytes)"
         exit 1
     fi
-    printf '%-30s %8d bytes\n' "${generated_file:t}" "$file_bytes"
+    printf '%-30s %8d bytes\n' "$generated_file" "$file_bytes"
 done
 
 if (( total_bytes > 2621440 )); then
     print -u2 "Generated assets exceed the 2.5 MB page budget: $total_bytes bytes"
     exit 1
 fi
+
+mkdir -p "$ASSET_DIR"
+for generated_file in "${generated_files[@]}"; do
+    install -m 0644 "$STAGE_DIR/$generated_file" "$ASSET_DIR/$generated_file"
+done
 
 printf 'Total asset weight: %d bytes\n' "$total_bytes"
