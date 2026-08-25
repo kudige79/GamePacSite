@@ -232,7 +232,7 @@ let social = makePNG(width: 1200, height: 630) { rect in
 
     NSString(string: "Game Pac").draw(at: NSPoint(x: 78, y: 372), withAttributes: titleStyle)
     NSString(string: "Clear. Outrun. Merge.").draw(at: NSPoint(x: 84, y: 300), withAttributes: hookStyle)
-    NSString(string: "Three native Mac games,\nmade from the first line of Swift.").draw(
+    NSString(string: "Three games. Three ways\nto chase one more run.").draw(
         in: NSRect(x: 87, y: 190, width: 570, height: 92),
         withAttributes: captionStyle
     )
@@ -242,6 +242,6 @@ let social = makePNG(width: 1200, height: 630) { rect in
         .font: roundedFont(size: 22, weight: .semibold),
         .foregroundColor: NSColor(srgbRed: 184.0 / 255.0, green: 194.0 / 255.0, blue: 212.0 / 255.0, alpha: 1)
     ]
-    NSString(string: "Native to macOS").draw(at: NSPoint(x: 184, y: 99), withAttributes: signatureStyle)
+    NSString(string: "Pick a game. Go again.").draw(at: NSPoint(x: 184, y: 99), withAttributes: signatureStyle)
 }
 try social.write(to: outputDirectory.appendingPathComponent("og-game-pac.png"), options: .atomic)
