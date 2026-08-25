@@ -18,6 +18,12 @@ downsamples them for the web, and regenerates the Game Pac mark, favicon, and
 social-preview image. It is deterministic and safe to rerun after any source
 asset changes, including Tilly's icon redesign.
 
+The script synchronizes committed source images; it does not regenerate the
+games' own preview suites. Mine Sweeper currently has no off-screen renderer,
+and Tilly's committed previews did not match a fresh renderer check on
+2026-08-25. Review refreshed game previews in their source repos before treating
+an asset sync as proof that the underlying capture is current.
+
 ## Preview locally
 
 Open `index.html` directly in Safari. Every site-owned URL is relative, so the
@@ -33,10 +39,10 @@ same files also work from a GitHub Pages project path.
 Publishing and remote setup belong to the owner; this project intentionally has
 no configured remote.
 
-## Pending release links
+## Release links
 
-- Mine Sweeper's Download button currently opens its latest-release page. After
-  the next release includes `MineSweeper.dmg`, replace it with
-  `https://github.com/kudige79/minesweeper/releases/latest/download/MineSweeper.dmg`.
+- Mine Sweeper and Dottie use verified permanent `releases/latest/download`
+  links. Their packaging scripts produce the unversioned assets needed to keep
+  those URLs stable across releases.
 - Tilly's permanent Download URL is already wired into the page. It will return
   404 until the owner publishes Tilly's first release with `Tilly.dmg`.
