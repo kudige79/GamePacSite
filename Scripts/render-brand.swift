@@ -116,11 +116,47 @@ func roundedFont(size: CGFloat, weight: NSFont.Weight) -> NSFont {
     return base
 }
 
+func loadImage(_ url: URL) -> NSImage {
+    guard let image = NSImage(contentsOf: url) else {
+        fatalError("Could not load image at \(url.path)")
+    }
+    return image
+}
+
+func drawIconCard(_ image: NSImage, in rect: NSRect, fill: NSColor) {
+    NSGraphicsContext.saveGraphicsState()
+    let shadow = NSShadow()
+    shadow.shadowColor = NSColor.black.withAlphaComponent(0.35)
+    shadow.shadowBlurRadius = 22
+    shadow.shadowOffset = NSSize(width: 0, height: -10)
+    shadow.set()
+    drawRoundedRect(
+        rect,
+        radius: 30,
+        fill: fill,
+        stroke: NSColor.white.withAlphaComponent(0.18),
+        lineWidth: 2
+    )
+    NSGraphicsContext.restoreGraphicsState()
+
+    image.draw(
+        in: rect.insetBy(dx: 13, dy: 13),
+        from: .zero,
+        operation: .sourceOver,
+        fraction: 1,
+        respectFlipped: true,
+        hints: [.interpolation: NSImageInterpolation.high]
+    )
+}
+
 guard CommandLine.arguments.count == 2 else {
     fatalError("Usage: render-brand.swift OUTPUT_DIRECTORY")
 }
 
 let outputDirectory = URL(fileURLWithPath: CommandLine.arguments[1], isDirectory: true)
+let mineIcon = loadImage(outputDirectory.appendingPathComponent("minesweeper-icon.png"))
+let dottieIcon = loadImage(outputDirectory.appendingPathComponent("dottie-icon.png"))
+let tillyIcon = loadImage(outputDirectory.appendingPathComponent("tilly-icon.png"))
 
 let markLight = makePNG(width: 512, height: 512) { rect in
     drawMark(in: rect, palette: light)
@@ -138,28 +174,74 @@ let favicon = makePNG(width: 64, height: 64) { rect in
 try favicon.write(to: outputDirectory.appendingPathComponent("favicon.png"), options: .atomic)
 
 let social = makePNG(width: 1200, height: 630) { rect in
-    NSColor(srgbRed: 245.0 / 255.0, green: 247.0 / 255.0, blue: 250.0 / 255.0, alpha: 1).setFill()
+    NSColor(srgbRed: 8.0 / 255.0, green: 13.0 / 255.0, blue: 24.0 / 255.0, alpha: 1).setFill()
     rect.fill()
 
-    let halo = NSBezierPath(ovalIn: NSRect(x: 660, y: 25, width: 540, height: 540))
-    NSColor(srgbRed: 0.0, green: 87.0 / 255.0, blue: 200.0 / 255.0, alpha: 0.08).setFill()
-    halo.fill()
+    NSColor.white.withAlphaComponent(0.055).setStroke()
+    for x in stride(from: CGFloat(0), through: rect.width, by: 52) {
+        let line = NSBezierPath()
+        line.move(to: NSPoint(x: x, y: 0))
+        line.line(to: NSPoint(x: x, y: rect.height))
+        line.lineWidth = 1
+        line.stroke()
+    }
+    for y in stride(from: CGFloat(0), through: rect.height, by: 52) {
+        let line = NSBezierPath()
+        line.move(to: NSPoint(x: 0, y: y))
+        line.line(to: NSPoint(x: rect.width, y: y))
+        line.lineWidth = 1
+        line.stroke()
+    }
 
-    drawMark(in: NSRect(x: 770, y: 145, width: 340, height: 340), palette: light)
+    let blueHalo = NSBezierPath(ovalIn: NSRect(x: 700, y: 210, width: 500, height: 500))
+    NSColor(srgbRed: 76.0 / 255.0, green: 110.0 / 255.0, blue: 245.0 / 255.0, alpha: 0.23).setFill()
+    blueHalo.fill()
+
+    let mintHalo = NSBezierPath(ovalIn: NSRect(x: 670, y: -190, width: 420, height: 420))
+    NSColor(srgbRed: 123.0 / 255.0, green: 224.0 / 255.0, blue: 177.0 / 255.0, alpha: 0.13).setFill()
+    mintHalo.fill()
+
+    drawIconCard(
+        mineIcon,
+        in: NSRect(x: 730, y: 355, width: 158, height: 158),
+        fill: NSColor(srgbRed: 55.0 / 255.0, green: 58.0 / 255.0, blue: 53.0 / 255.0, alpha: 1)
+    )
+    drawIconCard(
+        dottieIcon,
+        in: NSRect(x: 930, y: 232, width: 178, height: 178),
+        fill: NSColor(srgbRed: 8.0 / 255.0, green: 8.0 / 255.0, blue: 58.0 / 255.0, alpha: 1)
+    )
+    drawIconCard(
+        tillyIcon,
+        in: NSRect(x: 750, y: 70, width: 164, height: 164),
+        fill: NSColor(srgbRed: 16.0 / 255.0, green: 42.0 / 255.0, blue: 35.0 / 255.0, alpha: 1)
+    )
 
     let titleStyle: [NSAttributedString.Key: Any] = [
-        .font: roundedFont(size: 90, weight: .bold),
-        .foregroundColor: NSColor(srgbRed: 21.0 / 255.0, green: 32.0 / 255.0, blue: 51.0 / 255.0, alpha: 1)
+        .font: roundedFont(size: 96, weight: .bold),
+        .foregroundColor: NSColor.white
+    ]
+    let hookStyle: [NSAttributedString.Key: Any] = [
+        .font: roundedFont(size: 40, weight: .bold),
+        .foregroundColor: NSColor(srgbRed: 143.0 / 255.0, green: 194.0 / 255.0, blue: 1, alpha: 1)
     ]
     let captionStyle: [NSAttributedString.Key: Any] = [
-        .font: NSFont.systemFont(ofSize: 32, weight: .medium),
-        .foregroundColor: NSColor(srgbRed: 82.0 / 255.0, green: 97.0 / 255.0, blue: 116.0 / 255.0, alpha: 1)
+        .font: NSFont.systemFont(ofSize: 27, weight: .medium),
+        .foregroundColor: NSColor(srgbRed: 197.0 / 255.0, green: 205.0 / 255.0, blue: 224.0 / 255.0, alpha: 1)
     ]
 
-    NSString(string: "Game Pac").draw(at: NSPoint(x: 90, y: 325), withAttributes: titleStyle)
-    NSString(string: "Native macOS games, made all the way down.").draw(
-        in: NSRect(x: 94, y: 214, width: 585, height: 88),
+    NSString(string: "Game Pac").draw(at: NSPoint(x: 78, y: 372), withAttributes: titleStyle)
+    NSString(string: "Clear. Outrun. Merge.").draw(at: NSPoint(x: 84, y: 300), withAttributes: hookStyle)
+    NSString(string: "Three native Mac games,\nmade from the first line of Swift.").draw(
+        in: NSRect(x: 87, y: 190, width: 570, height: 92),
         withAttributes: captionStyle
     )
+
+    drawMark(in: NSRect(x: 82, y: 72, width: 82, height: 82), palette: dark)
+    let signatureStyle: [NSAttributedString.Key: Any] = [
+        .font: roundedFont(size: 22, weight: .semibold),
+        .foregroundColor: NSColor(srgbRed: 184.0 / 255.0, green: 194.0 / 255.0, blue: 212.0 / 255.0, alpha: 1)
+    ]
+    NSString(string: "Native to macOS").draw(at: NSPoint(x: 184, y: 99), withAttributes: signatureStyle)
 }
 try social.write(to: outputDirectory.appendingPathComponent("og-game-pac.png"), options: .atomic)
