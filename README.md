@@ -19,10 +19,11 @@ social-preview image. It is deterministic and safe to rerun after any source
 asset changes, including Tilly's icon redesign.
 
 The script synchronizes committed source images; it does not regenerate the
-games' own preview suites. Mine Sweeper currently has no off-screen renderer,
-and Tilly's committed previews did not match a fresh renderer check on
-2026-08-25. Review refreshed game previews in their source repos before treating
-an asset sync as proof that the underlying capture is current.
+games' own preview suites. Mine Sweeper currently has no off-screen renderer.
+On the canonical Mac, Tilly's renderer verifies all 30 committed previews
+byte-for-byte against fresh staged renders. Renders from other environments can
+differ per-machine and must not be treated as evidence that those previews are
+stale.
 
 ## Preview locally
 
