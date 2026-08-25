@@ -736,17 +736,10 @@ h3 {
   color: color-mix(in srgb, var(--game-accent) 78%, #000000);
 }
 
-.requirements,
-.launch-note {
+.requirements {
   margin: 15px 0 0;
   color: var(--muted);
   font-size: 13px;
-}
-
-.launch-note {
-  margin-top: 12px;
-  color: var(--game-accent);
-  font-weight: 800;
 }
 
 .collection-strip {

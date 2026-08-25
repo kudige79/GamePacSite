@@ -52,14 +52,10 @@ pre-publication placeholder.
 
 ## Release links
 
-- Mine Sweeper and Dottie use verified permanent `releases/latest/download`
-  links. Their packaging scripts produce the unversioned assets needed to keep
-  those URLs stable across releases.
-- Tilly's permanent Download URL is already wired into the page. It will return
-  404 until the owner publishes Tilly's first release with `Tilly.dmg`; its
-  release-notes link is intentionally omitted until that page exists. After the
-  first release is live, remove the page's "First release landing shortly."
-  small print at the same time.
+- Mine Sweeper, Dottie, and Tilly use verified permanent
+  `releases/latest/download` links. Each title's release page and unversioned DMG
+  were live when last checked on 2026-08-25. Their packaging scripts produce the
+  unversioned assets needed to keep those URLs stable across releases.
 
 **Every future release of every title must upload the unversioned `<Name>.dmg`
 alongside its versioned DMG.** The packaging scripts stage that permanent-link
