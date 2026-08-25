@@ -58,3 +58,8 @@ pre-publication placeholder.
 - Tilly's permanent Download URL is already wired into the page. It will return
   404 until the owner publishes Tilly's first release with `Tilly.dmg`; its
   release-notes link is intentionally omitted until that page exists.
+
+**Every future release of every title must upload the unversioned `<Name>.dmg`
+alongside its versioned DMG.** The packaging scripts stage that permanent-link
+asset, but uploading it is manual. If a latest release omits the unversioned
+copy, the website's primary Download button immediately becomes a 404.
