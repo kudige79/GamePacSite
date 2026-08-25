@@ -40,6 +40,16 @@ same files also work from a GitHub Pages project path.
 Publishing and remote setup belong to the owner; this project intentionally has
 no configured remote.
 
+After GitHub Pages publishes the site, replace the relative `og:image` value in
+`index.html` with the page's absolute URL:
+
+```text
+https://<user>.github.io/<repo>/assets/og-game-pac.png
+```
+
+Social crawlers require that absolute URL; the relative value is only a
+pre-publication placeholder.
+
 ## Release links
 
 - Mine Sweeper and Dottie use verified permanent `releases/latest/download`
