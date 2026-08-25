@@ -57,7 +57,9 @@ pre-publication placeholder.
   those URLs stable across releases.
 - Tilly's permanent Download URL is already wired into the page. It will return
   404 until the owner publishes Tilly's first release with `Tilly.dmg`; its
-  release-notes link is intentionally omitted until that page exists.
+  release-notes link is intentionally omitted until that page exists. After the
+  first release is live, remove the page's "First release landing shortly."
+  small print at the same time.
 
 **Every future release of every title must upload the unversioned `<Name>.dmg`
 alongside its versioned DMG.** The packaging scripts stage that permanent-link
