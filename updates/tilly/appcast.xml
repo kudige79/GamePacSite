@@ -3,6 +3,22 @@
     <channel>
         <title>Tilly</title>
         <item>
+            <title>1.0.3</title>
+            <pubDate>Wed, 26 Aug 2026 16:42:13 +0530</pubDate>
+            <sparkle:version>4</sparkle:version>
+            <sparkle:shortVersionString>1.0.3</sparkle:shortVersionString>
+            <sparkle:minimumSystemVersion>14.0</sparkle:minimumSystemVersion>
+            <enclosure url="https://game-pac.com/downloads/Tilly-1.0.3.dmg" length="3164055" type="application/octet-stream" sparkle:edSignature="nx4Zf9uBFGQI4IoV9A6xfcGGDjVrs1EL0L1xz/D2ezI9g9Bf//e5psfGQQxCJDKfUmVz2KEMUPbVjFgVG8T/Cg=="/>
+        </item>
+        <item>
+            <title>1.0.2</title>
+            <pubDate>Wed, 26 Aug 2026 16:35:31 +0530</pubDate>
+            <sparkle:version>3</sparkle:version>
+            <sparkle:shortVersionString>1.0.2</sparkle:shortVersionString>
+            <sparkle:minimumSystemVersion>14.0</sparkle:minimumSystemVersion>
+            <enclosure url="https://game-pac.com/downloads/Tilly-1.0.2.dmg" length="3164165" type="application/octet-stream" sparkle:edSignature="WoBI/9D1Tb8jzzvjm5GzJeXb7f026IulqU2gzSaWUUMzzz8uvIuX+0m+OTYRLdr2vcoI84uN4qFXrU/5GQ6zAQ=="/>
+        </item>
+        <item>
             <title>1.0.1</title>
             <pubDate>Wed, 26 Aug 2026 14:57:28 +0530</pubDate>
             <sparkle:version>2</sparkle:version>

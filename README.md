@@ -104,14 +104,21 @@ For each game release:
 5. Commit the DMG, appcast and HTML change together; deploy and verify both URLs.
 6. Keep old versioned DMGs that are still referenced by a published appcast.
 
-### Private-repository migration
+### Private source and legacy updater compatibility
 
-The builds released on 2026-08-26 still contain legacy Sparkle feed URLs hosted
-by their public game repositories. Do **not** make those repositories private
-yet: installed copies would lose automatic updates. First release one migration
-build of each game while its repository is public. That build must use the
-matching `https://game-pac.com/updates/<game>/appcast.xml` feed, and the release
-appcast must offer that build to existing installations. After the migration
-updates have been live long enough for existing players to receive them, the
-three game repositories can be made private without affecting website downloads
-or subsequent updates.
+The games are freeware, not open source. Their complete source and history live
+in private `*-source` repositories. The exact original repository addresses
+remain public only as permanent, source-free compatibility relays because older
+installed builds have those URLs embedded.
+
+Each relay has fresh history, a short README pointing players to
+`https://game-pac.com`, and one frozen release asset named `appcast.xml`. It
+contains no source and no DMG. That appcast offers only the migration build and
+downloads its installer from this website. Never delete, replace or privatize a
+relay: a Mac that has been offline for years must still be able to cross the
+bridge.
+
+The migration build switches to the canonical feed under `updates/`. A later
+verification build is advertised only there, proving the second updater hop no
+longer depends on the relay. For a bridge release, publish and verify the site
+DMG and canonical site appcast first; publish the frozen relay appcast last.
