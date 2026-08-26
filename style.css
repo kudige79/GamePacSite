@@ -43,7 +43,6 @@ html {
 }
 
 body {
-  min-width: 320px;
   margin: 0;
   color: var(--ink);
   background:
@@ -119,6 +118,7 @@ footer {
 }
 
 .brand {
+  min-height: 44px;
   display: inline-flex;
   align-items: center;
   gap: 11px;
@@ -144,7 +144,7 @@ footer nav {
 }
 
 .site-header nav a {
-  min-height: 42px;
+  min-height: 44px;
   display: inline-flex;
   align-items: center;
   padding: 8px 13px;
@@ -222,6 +222,14 @@ h3 {
     linear-gradient(145deg, #121b3d 0%, #080d18 76%);
   box-shadow: 0 28px 84px rgba(8, 13, 24, 0.28);
   isolation: isolate;
+}
+
+.hero,
+.games-section,
+.game-card,
+.collection-strip,
+.launcher-teaser {
+  scroll-margin-top: 96px;
 }
 
 .hero::before {
@@ -396,6 +404,11 @@ h3 {
   color: #111827;
   box-shadow: 0 22px 50px rgba(0, 0, 0, 0.4);
   transform: translateY(-2px);
+}
+
+.hero-game:active {
+  box-shadow: 0 12px 28px rgba(0, 0, 0, 0.34);
+  transform: translateY(4px);
 }
 
 .hero-game img {
@@ -723,6 +736,11 @@ h3 {
   box-shadow: 0 9px 0 color-mix(in srgb, var(--game-button) 58%, #080d18);
 }
 
+.game-card .button-primary:active {
+  box-shadow: 0 2px 0 color-mix(in srgb, var(--game-button) 58%, #080d18);
+  transform: translateY(5px);
+}
+
 .text-link {
   min-height: 44px;
   display: inline-flex;
@@ -930,10 +948,12 @@ footer p {
 }
 
 footer nav a {
-  min-height: 42px;
+  min-width: 44px;
+  min-height: 44px;
   display: inline-flex;
   align-items: center;
-  padding: 7px 4px;
+  justify-content: center;
+  padding: 7px 8px;
   color: var(--muted);
   font-size: 14px;
   font-weight: 750;
@@ -1247,7 +1267,9 @@ footer nav a:hover {
   }
 
   .button:hover,
-  .hero-game:hover {
+  .button:active,
+  .hero-game:hover,
+  .hero-game:active {
     transform: none;
   }
 }

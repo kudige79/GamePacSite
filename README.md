@@ -15,46 +15,65 @@ under the same `Developer` directory, then run:
 
 The script copies the committed app icons and Modern-theme preview renders,
 downsamples them for the web, and regenerates the Game Pac mark, favicon, and
-social-preview image. It is deterministic and safe to rerun after any source
-asset changes, including Tilly's icon redesign.
+social-preview image. It is deterministic and safe to rerun after source asset
+changes, including an icon redesign.
+
+It overwrites `assets/` in place. Rerun it whenever a game's committed icon or
+Modern preview changes, then **commit the files it rewrote** — the site ships
+what is committed here, not what the sibling repos currently hold. A game UI
+change that is never synced leaves the published page advertising an older
+build.
 
 The script synchronizes committed source images; it does not regenerate the
-games' own preview suites. Mine Sweeper currently has no off-screen renderer.
-On the canonical Mac, Tilly's renderer verifies all 30 committed previews
-byte-for-byte against fresh staged renders. Renders from other environments can
-differ per-machine and must not be treated as evidence that those previews are
-stale.
+games' own preview suites. Dottie and Tilly each own an off-screen renderer
+(`Scripts/render-previews.sh`); Mine Sweeper has none, so its source is a
+reviewed real-screen capture. On the canonical Mac, each renderer's `--check`
+mode verifies its entire committed suite byte-for-byte against fresh staged
+renders. Output from other environments can differ per-machine and must not, by
+itself, be treated as evidence that a committed preview is stale.
+
+Tilly's light Modern midgame fixture uses the renderer's AppKit-hosted path.
+The ordinary `ImageRenderer` path gave that one system-material surface a warm
+cast the running app never shows; the hosted path preserves the app's neutral
+grey. Do not point the site back at a separately rendered replacement.
 
 ## Preview locally
 
-Open `index.html` directly in Safari. Every site-owned URL is relative, so the
-same files also work from a GitHub Pages project path.
+Open `index.html` directly in Safari. Every asset, stylesheet, and internal
+anchor is a relative URL, so the page renders correctly from a local file, from
+a project path, and from the apex domain alike. The canonical and social URLs
+described below are the deliberate exceptions.
 
-## Publish with GitHub Pages
+## Published site
 
-1. Create an empty GitHub repository for this directory.
-2. Add that repository as the local `origin`, then push the `main` branch.
-3. In the repository's **Settings → Pages**, choose **Deploy from a branch**,
-   then select the `main` branch and the `/ (root)` folder.
+The site is live at <https://game-pac.com/>, served by GitHub Pages from the
+`main` branch of `origin` (`github.com/kudige79/GamePacSite`), root folder.
+`http://` and `https://www.` both redirect to that canonical apex address.
 
-Publishing and remote setup belong to the owner; this project intentionally has
-no configured remote.
+Publishing is already configured. Three places pin the domain and must move
+together if it ever changes:
 
-After GitHub Pages publishes the site, replace the relative `og:image` value in
-`index.html` with the page's absolute URL:
+1. `CNAME` in this directory.
+2. The **Settings → Pages** custom-domain field, with **Enforce HTTPS** on.
+3. The absolute canonical, `og:url`, `og:image`, and Twitter-card URLs in
+   `index.html`.
 
-```text
-https://<user>.github.io/<repo>/assets/og-game-pac.png
-```
+The social image URL must stay absolute: social crawlers cannot resolve a
+relative `og:image`, so a relative value yields a blank link preview. DNS
+records for the apex and `www` are recorded in
+`../GAMEPAC-GITHUB-PAGES-DOMAIN-SETTINGS.md`.
 
-Social crawlers require that absolute URL; the relative value is only a
-pre-publication placeholder.
+After publishing, verify the Pages deployment, the HTTP-to-HTTPS redirects,
+the certificate for both `game-pac.com` and `www.game-pac.com`, and the social
+image before treating the release as complete. After changing social metadata,
+re-scrape the URL in the Facebook Sharing Debugger and LinkedIn Post Inspector;
+those crawlers may otherwise continue showing a cached preview.
 
 ## Release links
 
 - Mine Sweeper, Dottie, and Tilly use verified permanent
   `releases/latest/download` links. Each title's release page and unversioned DMG
-  were live when last checked on 2026-08-25. Their packaging scripts produce the
+  were live when last checked on 2026-08-26. Their packaging scripts produce the
   unversioned assets needed to keep those URLs stable across releases.
 
 **Every future release of every title must upload the unversioned `<Name>.dmg`
