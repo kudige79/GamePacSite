@@ -1,0 +1,14 @@
+<?xml version="1.0" standalone="yes"?>
+<rss xmlns:sparkle="http://www.andymatuschak.org/xml-namespaces/sparkle" version="2.0">
+    <channel>
+        <title>Tilly</title>
+        <item>
+            <title>1.0.1</title>
+            <pubDate>Wed, 26 Aug 2026 14:57:28 +0530</pubDate>
+            <sparkle:version>2</sparkle:version>
+            <sparkle:shortVersionString>1.0.1</sparkle:shortVersionString>
+            <sparkle:minimumSystemVersion>14.0</sparkle:minimumSystemVersion>
+            <enclosure url="https://game-pac.com/downloads/Tilly-1.0.1.dmg" length="3164097" type="application/octet-stream" sparkle:edSignature="0MaE0EVlsRM7qN617Qdj8+Vs1dqKRUl6lfjqp7Td70OqQP3lJDOa31WSyCSejBFMgAOgeTzoQ16OQUqHmnFKBQ=="/>
+        </item>
+    </channel>
+</rss>

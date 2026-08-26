@@ -741,19 +741,6 @@ h3 {
   transform: translateY(5px);
 }
 
-.text-link {
-  min-height: 44px;
-  display: inline-flex;
-  align-items: center;
-  color: var(--game-accent);
-  font-size: 14px;
-  font-weight: 800;
-}
-
-.text-link:hover {
-  color: color-mix(in srgb, var(--game-accent) 78%, #000000);
-}
-
 .requirements {
   margin: 15px 0 0;
   color: var(--muted);
@@ -1016,10 +1003,6 @@ footer nav a:hover {
     color: var(--ink);
   }
 
-  .text-link:hover {
-    color: color-mix(in srgb, var(--game-accent) 72%, #ffffff);
-  }
-
   .launcher-icons img {
     border-color: var(--surface);
   }
@@ -1195,10 +1178,6 @@ footer nav a:hover {
 
   .button {
     width: 100%;
-  }
-
-  .text-link {
-    justify-content: center;
   }
 
   .collection-strip {

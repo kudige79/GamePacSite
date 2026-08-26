@@ -69,14 +69,49 @@ image before treating the release as complete. After changing social metadata,
 re-scrape the URL in the Facebook Sharing Debugger and LinkedIn Post Inspector;
 those crawlers may otherwise continue showing a cached preview.
 
-## Release links
+## Downloads and updates
 
-- Mine Sweeper, Dottie, and Tilly use verified permanent
-  `releases/latest/download` links. Each title's release page and unversioned DMG
-  were live when last checked on 2026-08-26. Their packaging scripts produce the
-  unversioned assets needed to keep those URLs stable across releases.
+Game Pac is the public distribution surface. Player-facing links must stay on
+`game-pac.com`; do not link the page to a game repository or its release page.
+The website repository remains public so GitHub Pages can serve the site, while
+the three game source repositories can be private after the updater migration
+described below is complete.
 
-**Every future release of every title must upload the unversioned `<Name>.dmg`
-alongside its versioned DMG.** The packaging scripts stage that permanent-link
-asset, but uploading it is manual. If a latest release omits the unversioned
-copy, the website's primary Download button immediately becomes a 404.
+Versioned, signed and notarized DMGs live in `downloads/`. Versioned filenames
+are deliberate: they prevent a browser or CDN from serving an older build after
+a release. The homepage button for each game must name the current version.
+Sparkle feeds live in `updates/<game>/appcast.xml`, and their enclosure URLs
+also point to the versioned files on `game-pac.com`.
+
+After packaging all three sibling projects, refresh the distribution files with:
+
+```bash
+./Scripts/sync-downloads.sh
+```
+
+The script copies every versioned DMG found in each sibling project's `dist/`
+directory, copies its appcast, rewrites the copied enclosure URLs to
+`https://game-pac.com/downloads/`, and refuses to publish an appcast that still
+depends on a private game repository. It also verifies that every rewritten
+enclosure has a corresponding DMG on the site.
+
+For each game release:
+
+1. Build, sign, notarize and verify the versioned DMG in the game repository.
+2. Generate its signed appcast.
+3. Run `./Scripts/sync-downloads.sh` here.
+4. Update that game's homepage button to the new versioned filename.
+5. Commit the DMG, appcast and HTML change together; deploy and verify both URLs.
+6. Keep old versioned DMGs that are still referenced by a published appcast.
+
+### Private-repository migration
+
+The builds released on 2026-08-26 still contain legacy Sparkle feed URLs hosted
+by their public game repositories. Do **not** make those repositories private
+yet: installed copies would lose automatic updates. First release one migration
+build of each game while its repository is public. That build must use the
+matching `https://game-pac.com/updates/<game>/appcast.xml` feed, and the release
+appcast must offer that build to existing installations. After the migration
+updates have been live long enough for existing players to receive them, the
+three game repositories can be made private without affecting website downloads
+or subsequent updates.

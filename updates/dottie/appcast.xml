@@ -1,0 +1,14 @@
+<?xml version="1.0" standalone="yes"?>
+<rss xmlns:sparkle="http://www.andymatuschak.org/xml-namespaces/sparkle" version="2.0">
+    <channel>
+        <title>Dottie</title>
+        <item>
+            <title>1.1.1</title>
+            <pubDate>Wed, 26 Aug 2026 12:04:27 +0530</pubDate>
+            <sparkle:version>7</sparkle:version>
+            <sparkle:shortVersionString>1.1.1</sparkle:shortVersionString>
+            <sparkle:minimumSystemVersion>14.0</sparkle:minimumSystemVersion>
+            <enclosure url="https://game-pac.com/downloads/Dottie-1.1.1.dmg" length="2926639" type="application/octet-stream" sparkle:edSignature="cpf1tnPO8D2qpLBY0i3vlLRDnK39qpBmk6uGqzDOBV5eJzd1eRQwkskXOXarpaIQyqF5jA+4xxHvo+J2E9lBBA=="/>
+        </item>
+    </channel>
+</rss>
