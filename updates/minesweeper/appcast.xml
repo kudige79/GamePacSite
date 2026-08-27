@@ -3,6 +3,14 @@
     <channel>
         <title>Mine Sweeper</title>
         <item>
+            <title>1.1.4</title>
+            <pubDate>Thu, 27 Aug 2026 23:13:53 +0530</pubDate>
+            <sparkle:version>19</sparkle:version>
+            <sparkle:shortVersionString>1.1.4</sparkle:shortVersionString>
+            <sparkle:minimumSystemVersion>14.0</sparkle:minimumSystemVersion>
+            <enclosure url="https://game-pac.com/downloads/MineSweeper-1.1.4.dmg" length="4311960" type="application/octet-stream" sparkle:edSignature="llKG7eyCk7oFLV8Pl05iorKKok2jcd18J0ACcY0aJzWi+XGWFuDRY12I1PaluWS+3gXzHnYh87he4hJEAlT1Cg=="/>
+        </item>
+        <item>
             <title>1.1.3</title>
             <pubDate>Wed, 26 Aug 2026 16:38:18 +0530</pubDate>
             <sparkle:version>18</sparkle:version>
@@ -17,14 +25,6 @@
             <sparkle:shortVersionString>1.1.2</sparkle:shortVersionString>
             <sparkle:minimumSystemVersion>14.0</sparkle:minimumSystemVersion>
             <enclosure url="https://game-pac.com/downloads/MineSweeper-1.1.2.dmg" length="4299654" type="application/octet-stream" sparkle:edSignature="kNLJP91jn6CiB62ADvnvXlyy7okRJ3PAi76d7pnX1bjmvfv5lW+BYTMyql5i+ZrTWRZnIWv5jCc320SGtczcBA=="/>
-        </item>
-        <item>
-            <title>1.1.1</title>
-            <pubDate>Wed, 26 Aug 2026 11:31:05 +0530</pubDate>
-            <sparkle:version>16</sparkle:version>
-            <sparkle:shortVersionString>1.1.1</sparkle:shortVersionString>
-            <sparkle:minimumSystemVersion>14.0</sparkle:minimumSystemVersion>
-            <enclosure url="https://game-pac.com/downloads/MineSweeper-1.1.1.dmg" length="4298661" type="application/octet-stream" sparkle:edSignature="jiLoVtk3Ha1kWL7WJXidOGZSGfLASm041dkjdKd3D8eeBn4NilxZ4P0zl7Hs+fYU9NA7WwmsYv+RaddGUmOADw=="/>
         </item>
     </channel>
 </rss>
