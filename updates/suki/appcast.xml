@@ -1,0 +1,14 @@
+<?xml version="1.0" standalone="yes"?>
+<rss xmlns:sparkle="http://www.andymatuschak.org/xml-namespaces/sparkle" version="2.0">
+    <channel>
+        <title>Suki</title>
+        <item>
+            <title>1.0.0</title>
+            <pubDate>Fri, 28 Aug 2026 12:35:45 +0530</pubDate>
+            <sparkle:version>1</sparkle:version>
+            <sparkle:shortVersionString>1.0.0</sparkle:shortVersionString>
+            <sparkle:minimumSystemVersion>14.0</sparkle:minimumSystemVersion>
+            <enclosure url="https://game-pac.com/downloads/Suki-1.0.0.dmg" length="6240364" type="application/octet-stream" sparkle:edSignature="DsdsfNadgktY9KulhDa3/xKfuL5NFS7ZC4Qsn2UpgRleijmYYApEH1ZPx7jIu20VZwnRYVeNKOuU4h+IpG17DA=="/>
+        </item>
+    </channel>
+</rss>
