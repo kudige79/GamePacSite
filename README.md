@@ -1,22 +1,30 @@
 # Game Pac website
 
 The one-page home for the Game Pac collection: Mine Sweeper, Dottie, Tilly,
-and the forthcoming Game Pac launcher. It is hand-authored HTML and CSS with no
-framework, build step, external font, analytics, cookies, or JavaScript.
+Suki, and the forthcoming Game Pac launcher. It is hand-authored HTML and CSS
+with no framework, build step, external font, analytics, cookies, or
+JavaScript.
 
 ## Refresh the assets
 
-Keep `GamePacSite`, `MineSweeper`, `Dottie`, and `Tilly` as sibling directories
-under the same `Developer` directory, then run:
+Keep `GamePacSite`, `MineSweeper`, `Dottie`, `Tilly`, and `Suki` as sibling
+directories under the same `Developer` directory, then run:
 
 ```bash
 ./Scripts/sync-assets.sh
 ```
 
-The script copies the committed app icons and Modern-theme preview renders,
-downsamples them for the web, and regenerates the Game Pac mark, favicon, and
-social-preview image. It is deterministic and safe to rerun after source asset
-changes, including an icon redesign.
+From an isolated site clone, point the same deterministic pipeline at the
+source repositories explicitly:
+
+```bash
+GAMEPAC_DEVELOPER_ROOT=/path/to/Developer ./Scripts/sync-assets.sh
+```
+
+The script copies the committed app icons and each title's approved Modern
+image, downsamples them for the web, and regenerates the Game Pac mark,
+favicon, and social-preview image. It is deterministic and safe to rerun after
+source asset changes, including an icon redesign.
 
 It overwrites `assets/` in place. Rerun it whenever a game's committed icon or
 Modern preview changes, then **commit the files it rewrote** — the site ships
@@ -26,11 +34,13 @@ build.
 
 The script synchronizes committed source images; it does not regenerate the
 games' own preview suites. Dottie and Tilly each own an off-screen renderer
-(`Scripts/render-previews.sh`); Mine Sweeper has none, so its source is a
-reviewed real-screen capture. On the canonical Mac, each renderer's `--check`
-mode verifies its entire committed suite byte-for-byte against fresh staged
-renders. Output from other environments can differ per-machine and must not, by
-itself, be treated as evidence that a committed preview is stale.
+(`Scripts/render-previews.sh`); Mine Sweeper and Suki instead use reviewed
+real-window captures. Suki's sources are its shipping 1024-pixel app icon and
+`Suki/docs/marketing/midgame-modern-live.png`, a complete light-Modern Release
+window rather than a headless substitute. On the canonical Mac, each renderer's
+`--check` mode verifies its entire committed suite byte-for-byte against fresh
+staged renders. Output from other environments can differ per-machine and must
+not, by itself, be treated as evidence that a committed preview is stale.
 
 Tilly's light Modern midgame fixture uses the renderer's AppKit-hosted path.
 The ordinary `ImageRenderer` path gave that one system-material surface a warm
@@ -73,9 +83,8 @@ those crawlers may otherwise continue showing a cached preview.
 
 Game Pac is the public distribution surface. Player-facing links must stay on
 `game-pac.com`; do not link the page to a game repository or its release page.
-The website repository remains public so GitHub Pages can serve the site, while
-the three game source repositories can be private after the updater migration
-described below is complete.
+The website repository remains public so GitHub Pages can serve the site,
+while the game source repositories remain private.
 
 Versioned, signed and notarized DMGs live in `downloads/`. Versioned filenames
 are deliberate: they prevent a browser or CDN from serving an older build after
@@ -83,7 +92,8 @@ a release. The homepage button for each game must name the current version.
 Sparkle feeds live in `updates/<game>/appcast.xml`, and their enclosure URLs
 also point to the versioned files on `game-pac.com`.
 
-After packaging all three sibling projects, refresh the distribution files with:
+After packaging the sibling projects, the collection-wide distribution helper
+is:
 
 ```bash
 ./Scripts/sync-downloads.sh
@@ -95,7 +105,14 @@ directory, copies its appcast, rewrites the copied enclosure URLs to
 depends on a private game repository. It also verifies that every rewritten
 enclosure has a corresponding DMG on the site.
 
-For each game release:
+The helper knows all four titles. For Suki's first release, its signed DMG and
+appcast were staged title-by-title rather than through this helper, so stale
+sibling `dist/` directories could not replace already-hosted files. The
+`./downloads/Suki-1.0.0.dmg` card link, the DMG at that path, and
+`updates/suki/appcast.xml` must publish together.
+
+Once every title has current local distribution artifacts, use this
+collection-wide workflow for each established-title release:
 
 1. Build, sign, notarize and verify the versioned DMG in the game repository.
 2. Generate its signed appcast.
@@ -106,12 +123,13 @@ For each game release:
 
 ### Private source and legacy updater compatibility
 
-The games are freeware, not open source. Their complete source and history live
-in private `*-source` repositories. The exact original repository addresses
-remain public only as permanent, source-free compatibility relays because older
-installed builds have those URLs embedded.
+The three established titles with legacy feeds are freeware, not open source.
+Their complete source and history live in private `*-source` repositories. The
+exact original repository addresses remain public only as permanent,
+source-free compatibility relays because older installed builds have those
+URLs embedded.
 
-Each relay has fresh history, a short README pointing players to
+Each of those three relays has fresh history, a short README pointing players to
 `https://game-pac.com`, and one frozen release asset named `appcast.xml`. It
 contains no source and no DMG. That appcast offers only the migration build and
 downloads its installer from this website. Never delete, replace or privatize a

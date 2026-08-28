@@ -12,13 +12,13 @@ cleanup() {
 }
 trap cleanup EXIT
 
-slugs=(minesweeper dottie tilly)
-repo_directories=(MineSweeper Dottie Tilly)
-file_prefixes=(MineSweeper Dottie Tilly)
+slugs=(minesweeper dottie tilly suki)
+repo_directories=(MineSweeper Dottie Tilly Suki)
+file_prefixes=(MineSweeper Dottie Tilly Suki)
 
 mkdir -p "$STAGE_DIR/downloads" "$STAGE_DIR/updates"
 
-for index in {1..3}; do
+for (( index = 1; index <= ${#slugs[@]}; index++ )); do
     slug=${slugs[$index]}
     repo_directory=${repo_directories[$index]}
     file_prefix=${file_prefixes[$index]}

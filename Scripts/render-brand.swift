@@ -157,6 +157,7 @@ let outputDirectory = URL(fileURLWithPath: CommandLine.arguments[1], isDirectory
 let mineIcon = loadImage(outputDirectory.appendingPathComponent("minesweeper-icon.png"))
 let dottieIcon = loadImage(outputDirectory.appendingPathComponent("dottie-icon.png"))
 let tillyIcon = loadImage(outputDirectory.appendingPathComponent("tilly-icon.png"))
+let sukiIcon = loadImage(outputDirectory.appendingPathComponent("suki-icon.png"))
 
 let markLight = makePNG(width: 512, height: 512) { rect in
     drawMark(in: rect, palette: light)
@@ -201,20 +202,29 @@ let social = makePNG(width: 1200, height: 630) { rect in
     NSColor(srgbRed: 123.0 / 255.0, green: 224.0 / 255.0, blue: 177.0 / 255.0, alpha: 0.13).setFill()
     mintHalo.fill()
 
+    let sukiHalo = NSBezierPath(ovalIn: NSRect(x: 910, y: -40, width: 360, height: 360))
+    NSColor(srgbRed: 120.0 / 255.0, green: 183.0 / 255.0, blue: 1, alpha: 0.14).setFill()
+    sukiHalo.fill()
+
     drawIconCard(
         mineIcon,
-        in: NSRect(x: 730, y: 355, width: 158, height: 158),
+        in: NSRect(x: 724, y: 346, width: 150, height: 150),
         fill: NSColor(srgbRed: 55.0 / 255.0, green: 58.0 / 255.0, blue: 53.0 / 255.0, alpha: 1)
     )
     drawIconCard(
         dottieIcon,
-        in: NSRect(x: 930, y: 232, width: 178, height: 178),
+        in: NSRect(x: 932, y: 330, width: 168, height: 168),
         fill: NSColor(srgbRed: 8.0 / 255.0, green: 8.0 / 255.0, blue: 58.0 / 255.0, alpha: 1)
     )
     drawIconCard(
         tillyIcon,
-        in: NSRect(x: 750, y: 70, width: 164, height: 164),
+        in: NSRect(x: 740, y: 92, width: 158, height: 158),
         fill: NSColor(srgbRed: 16.0 / 255.0, green: 42.0 / 255.0, blue: 35.0 / 255.0, alpha: 1)
+    )
+    drawIconCard(
+        sukiIcon,
+        in: NSRect(x: 940, y: 82, width: 168, height: 168),
+        fill: NSColor(srgbRed: 23.0 / 255.0, green: 33.0 / 255.0, blue: 44.0 / 255.0, alpha: 1)
     )
 
     let titleStyle: [NSAttributedString.Key: Any] = [
@@ -222,7 +232,7 @@ let social = makePNG(width: 1200, height: 630) { rect in
         .foregroundColor: NSColor.white
     ]
     let hookStyle: [NSAttributedString.Key: Any] = [
-        .font: roundedFont(size: 40, weight: .bold),
+        .font: roundedFont(size: 36, weight: .bold),
         .foregroundColor: NSColor(srgbRed: 143.0 / 255.0, green: 194.0 / 255.0, blue: 1, alpha: 1)
     ]
     let captionStyle: [NSAttributedString.Key: Any] = [
@@ -231,8 +241,8 @@ let social = makePNG(width: 1200, height: 630) { rect in
     ]
 
     NSString(string: "Game Pac").draw(at: NSPoint(x: 78, y: 372), withAttributes: titleStyle)
-    NSString(string: "Clear. Outrun. Merge.").draw(at: NSPoint(x: 84, y: 300), withAttributes: hookStyle)
-    NSString(string: "Three games. Three ways\nto chase one more run.").draw(
+    NSString(string: "Clear. Outrun. Merge. Solve.").draw(at: NSPoint(x: 84, y: 300), withAttributes: hookStyle)
+    NSString(string: "Four games. Four ways\nto chase one more round.").draw(
         in: NSRect(x: 87, y: 190, width: 570, height: 92),
         withAttributes: captionStyle
     )

@@ -25,6 +25,11 @@
   --tilly-deep: #102a23;
   --tilly-mint: #7be0b1;
   --tilly-lavender: #afa0d0;
+  --suki: #0057c8;
+  --suki-soft: #e2ecf7;
+  --suki-dark-paper: #17212c;
+  --suki-dark-soft: #253a4d;
+  --suki-dark-accent: #78b7ff;
   --shadow: 0 22px 64px rgba(40, 51, 78, 0.13);
   --shadow-soft: 0 12px 34px rgba(40, 51, 78, 0.09);
   --radius-large: 34px;
@@ -49,6 +54,7 @@ body {
     radial-gradient(circle at 8% 18%, rgba(255, 73, 54, 0.08), transparent 24rem),
     radial-gradient(circle at 92% 42%, rgba(76, 110, 245, 0.1), transparent 30rem),
     radial-gradient(circle at 16% 80%, rgba(123, 224, 177, 0.09), transparent 26rem),
+    radial-gradient(circle at 88% 78%, rgba(0, 87, 200, 0.07), transparent 25rem),
     var(--page);
   font-family: var(--body);
   font-size: 17px;
@@ -218,6 +224,7 @@ h3 {
   background:
     radial-gradient(circle at 78% 14%, rgba(76, 110, 245, 0.5), transparent 31%),
     radial-gradient(circle at 96% 88%, rgba(123, 224, 177, 0.18), transparent 27%),
+    radial-gradient(circle at 58% 112%, rgba(120, 183, 255, 0.16), transparent 31%),
     radial-gradient(circle at 6% 96%, rgba(255, 73, 54, 0.18), transparent 30%),
     linear-gradient(145deg, #121b3d 0%, #080d18 76%);
   box-shadow: 0 28px 84px rgba(8, 13, 24, 0.28);
@@ -328,7 +335,7 @@ h3 {
 
 .hero-showcase {
   position: relative;
-  min-height: 500px;
+  min-height: 540px;
   border: 1px solid rgba(255, 255, 255, 0.13);
   border-radius: 30px;
   background:
@@ -450,8 +457,8 @@ h3 {
 }
 
 .hero-game-dottie {
-  top: 178px;
-  right: 48px;
+  top: 168px;
+  right: 28px;
   min-width: 214px;
   color: #ffffff;
   background: var(--dottie-deep);
@@ -472,12 +479,31 @@ h3 {
 
 .hero-game-tilly {
   bottom: 38px;
-  left: 62px;
+  left: 28px;
   background: #eafff5;
 }
 
 .hero-game-tilly small {
   color: var(--tilly);
+}
+
+.hero-game-suki {
+  right: 22px;
+  bottom: 38px;
+  color: #f2f6fa;
+  background:
+    linear-gradient(rgba(157, 175, 196, 0.13) 1px, transparent 1px),
+    linear-gradient(90deg, rgba(157, 175, 196, 0.13) 1px, transparent 1px),
+    var(--suki-dark-paper);
+  background-size: 18px 18px;
+}
+
+.hero-game-suki:hover {
+  color: #f2f6fa;
+}
+
+.hero-game-suki small {
+  color: var(--suki-dark-accent);
 }
 
 .games-section {
@@ -533,6 +559,12 @@ h3 {
 .game-card-tilly {
   --game-accent: var(--tilly);
   --game-accent-soft: #e6f9f2;
+}
+
+.game-card-suki {
+  --game-accent: var(--suki);
+  --game-accent-soft: var(--suki-soft);
+  --game-button: var(--suki);
 }
 
 .game-media {
@@ -595,6 +627,33 @@ h3 {
     linear-gradient(rgba(123, 224, 177, 0.85) 2px, transparent 2px),
     linear-gradient(90deg, rgba(123, 224, 177, 0.85) 2px, transparent 2px);
   background-size: 68px 68px;
+}
+
+.game-card-suki .game-media {
+  background:
+    radial-gradient(circle at 78% 18%, rgba(120, 183, 255, 0.28), transparent 26%),
+    var(--suki-dark-paper);
+}
+
+.game-card-suki .game-media::before {
+  inset: 24px;
+  border-radius: 22px;
+  opacity: 0.52;
+  background-image:
+    linear-gradient(rgba(157, 175, 196, 0.25) 1px, transparent 1px),
+    linear-gradient(90deg, rgba(157, 175, 196, 0.25) 1px, transparent 1px),
+    linear-gradient(rgba(196, 210, 226, 0.32) 3px, transparent 3px),
+    linear-gradient(90deg, rgba(196, 210, 226, 0.32) 3px, transparent 3px);
+  background-size: 30px 30px, 30px 30px, 90px 90px, 90px 90px;
+}
+
+.game-card-suki .window-shell {
+  border-color: rgba(196, 210, 226, 0.42);
+  background: var(--suki-dark-paper);
+}
+
+.game-card-suki .window-bar {
+  display: none;
 }
 
 .window-shell {
@@ -852,7 +911,7 @@ h3 {
 
 .launcher-visual {
   position: relative;
-  width: 180px;
+  width: 220px;
   min-height: 152px;
 }
 
@@ -972,6 +1031,7 @@ footer nav a:hover {
       radial-gradient(circle at 8% 18%, rgba(255, 73, 54, 0.09), transparent 24rem),
       radial-gradient(circle at 92% 42%, rgba(76, 110, 245, 0.14), transparent 30rem),
       radial-gradient(circle at 16% 80%, rgba(123, 224, 177, 0.08), transparent 26rem),
+      radial-gradient(circle at 88% 78%, rgba(120, 183, 255, 0.08), transparent 25rem),
       var(--page);
   }
 
@@ -991,6 +1051,13 @@ footer nav a:hover {
     --game-accent-soft: #12372d;
     --game-button: #7be0b1;
     --game-button-ink: var(--tilly-deep);
+  }
+
+  .game-card-suki {
+    --game-accent: var(--suki-dark-accent);
+    --game-accent-soft: var(--suki-dark-soft);
+    --game-button: var(--suki-dark-accent);
+    --game-button-ink: #101014;
   }
 
   .game-card-minesweeper {
@@ -1019,7 +1086,7 @@ footer nav a:hover {
 
   .hero-showcase {
     width: min(100%, 680px);
-    min-height: 470px;
+    min-height: 540px;
     margin-inline: auto;
   }
 
@@ -1087,7 +1154,7 @@ footer nav a:hover {
   }
 
   .hero-showcase {
-    min-height: 396px;
+    min-height: 500px;
     border-radius: 22px;
   }
 
@@ -1112,18 +1179,24 @@ footer nav a:hover {
   }
 
   .hero-game-minesweeper {
-    top: 26px;
-    left: 14px;
+    top: 20px;
+    left: 12px;
   }
 
   .hero-game-dottie {
-    top: 147px;
-    right: 14px;
+    top: 132px;
+    right: 12px;
   }
 
   .hero-game-tilly {
-    bottom: 28px;
-    left: 28px;
+    top: 244px;
+    bottom: auto;
+    left: 18px;
+  }
+
+  .hero-game-suki {
+    right: 12px;
+    bottom: 22px;
   }
 
   .games-section {
@@ -1199,7 +1272,7 @@ footer nav a:hover {
   }
 
   .launcher-visual {
-    width: 158px;
+    width: 194px;
     min-height: 132px;
   }
 
@@ -1230,6 +1303,10 @@ footer nav a:hover {
 
   .hero-game-tilly {
     left: 14px;
+  }
+
+  .hero-game-suki {
+    right: 8px;
   }
 }
 

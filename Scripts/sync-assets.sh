@@ -17,9 +17,11 @@ typeset -A SOURCES
 SOURCES[minesweeper_icon]="$DEVELOPER_ROOT/MineSweeper/MineSweeper/Assets.xcassets/AppIcon.appiconset/icon_512x512@2x.png"
 SOURCES[dottie_icon]="$DEVELOPER_ROOT/Dottie/Dottie/Assets.xcassets/AppIcon.appiconset/icon_512x512@2x.png"
 SOURCES[tilly_icon]="$DEVELOPER_ROOT/Tilly/Tilly/Assets.xcassets/AppIcon.appiconset/icon_512x512@2x.png"
+SOURCES[suki_icon]="$DEVELOPER_ROOT/Suki/Suki/Assets.xcassets/AppIcon.appiconset/icon_512x512@2x.png"
 SOURCES[minesweeper_shot]="$DEVELOPER_ROOT/MineSweeper/VisualEvidence/proposal3/modern-cascade-resting.png"
 SOURCES[dottie_shot]="$DEVELOPER_ROOT/Dottie/Previews/ready-modern.png"
 SOURCES[tilly_shot]="$DEVELOPER_ROOT/Tilly/Previews/midgame-modern.png"
+SOURCES[suki_shot]="$DEVELOPER_ROOT/Suki/docs/marketing/midgame-modern-live.png"
 
 for source_file in "${SOURCES[@]}"; do
     if [[ ! -f "$source_file" ]]; then
@@ -53,17 +55,19 @@ downsample_jpeg() {
 downsample_png "${SOURCES[minesweeper_icon]}" "$STAGE_DIR/minesweeper-icon.png"
 downsample_png "${SOURCES[dottie_icon]}" "$STAGE_DIR/dottie-icon.png"
 downsample_png "${SOURCES[tilly_icon]}" "$STAGE_DIR/tilly-icon.png"
+downsample_png "${SOURCES[suki_icon]}" "$STAGE_DIR/suki-icon.png"
 
 downsample_jpeg "${SOURCES[minesweeper_shot]}" "$STAGE_DIR/minesweeper-modern.jpg"
 downsample_jpeg "${SOURCES[dottie_shot]}" "$STAGE_DIR/dottie-modern.jpg"
 downsample_jpeg "${SOURCES[tilly_shot]}" "$STAGE_DIR/tilly-modern.jpg"
+downsample_jpeg "${SOURCES[suki_shot]}" "$STAGE_DIR/suki-modern.jpg"
 
 CLANG_MODULE_CACHE_PATH="$STAGE_DIR/module-cache" \
     xcrun swift "$SCRIPT_DIR/render-brand.swift" "$STAGE_DIR"
 
 generated_files=(
-    minesweeper-icon.png dottie-icon.png tilly-icon.png \
-    minesweeper-modern.jpg dottie-modern.jpg tilly-modern.jpg \
+    minesweeper-icon.png dottie-icon.png tilly-icon.png suki-icon.png \
+    minesweeper-modern.jpg dottie-modern.jpg tilly-modern.jpg suki-modern.jpg \
     game-pac-mark-light.png game-pac-mark-dark.png favicon.png og-game-pac.png
 )
 
