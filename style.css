@@ -910,9 +910,12 @@ h3 {
 }
 
 .launcher-visual {
-  position: relative;
+  display: grid;
+  grid-template-columns: auto auto;
+  align-items: center;
+  justify-content: space-between;
   width: 220px;
-  min-height: 152px;
+  min-height: 112px;
 }
 
 .launcher-mark {
@@ -928,10 +931,8 @@ h3 {
 }
 
 .launcher-icons {
-  position: absolute;
-  right: 0;
-  bottom: 0;
-  display: flex;
+  display: grid;
+  grid-template-columns: repeat(2, max-content);
   gap: 6px;
 }
 
@@ -1273,7 +1274,7 @@ footer nav a:hover {
 
   .launcher-visual {
     width: 194px;
-    min-height: 132px;
+    min-height: 96px;
   }
 
   .launcher-mark,
