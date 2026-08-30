@@ -3,6 +3,14 @@
     <channel>
         <title>Dottie</title>
         <item>
+            <title>1.1.4</title>
+            <pubDate>Sun, 30 Aug 2026 15:45:41 +0530</pubDate>
+            <sparkle:version>10</sparkle:version>
+            <sparkle:shortVersionString>1.1.4</sparkle:shortVersionString>
+            <sparkle:minimumSystemVersion>14.0</sparkle:minimumSystemVersion>
+            <enclosure url="https://game-pac.com/downloads/Dottie-1.1.4.dmg" length="3016805" type="application/octet-stream" sparkle:edSignature="FVAmXJ4JGXZMwMOxJwlKTOHKr+74jz1kazzRKDG3m9ANxBDysxCnagw7tMzkTBb10XtHWM124O5gCUzV78dvCw=="/>
+        </item>
+        <item>
             <title>1.1.3</title>
             <pubDate>Wed, 26 Aug 2026 16:40:04 +0530</pubDate>
             <sparkle:version>9</sparkle:version>
@@ -17,14 +25,6 @@
             <sparkle:shortVersionString>1.1.2</sparkle:shortVersionString>
             <sparkle:minimumSystemVersion>14.0</sparkle:minimumSystemVersion>
             <enclosure url="https://game-pac.com/downloads/Dottie-1.1.2.dmg" length="2926581" type="application/octet-stream" sparkle:edSignature="TDfBPsVo/sYZMR+dlHvQrOHBNOKIAMwA2wcqvNQ7+QHmoCYdDnRL8BIbv/0Zy2MyFjhnveDuzEFksovRR5RKBg=="/>
-        </item>
-        <item>
-            <title>1.1.1</title>
-            <pubDate>Wed, 26 Aug 2026 12:04:27 +0530</pubDate>
-            <sparkle:version>7</sparkle:version>
-            <sparkle:shortVersionString>1.1.1</sparkle:shortVersionString>
-            <sparkle:minimumSystemVersion>14.0</sparkle:minimumSystemVersion>
-            <enclosure url="https://game-pac.com/downloads/Dottie-1.1.1.dmg" length="2926639" type="application/octet-stream" sparkle:edSignature="cpf1tnPO8D2qpLBY0i3vlLRDnK39qpBmk6uGqzDOBV5eJzd1eRQwkskXOXarpaIQyqF5jA+4xxHvo+J2E9lBBA=="/>
         </item>
     </channel>
 </rss>

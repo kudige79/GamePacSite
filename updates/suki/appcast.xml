@@ -3,6 +3,14 @@
     <channel>
         <title>Suki</title>
         <item>
+            <title>1.0.1</title>
+            <pubDate>Sun, 30 Aug 2026 15:49:07 +0530</pubDate>
+            <sparkle:version>2</sparkle:version>
+            <sparkle:shortVersionString>1.0.1</sparkle:shortVersionString>
+            <sparkle:minimumSystemVersion>14.0</sparkle:minimumSystemVersion>
+            <enclosure url="https://game-pac.com/downloads/Suki-1.0.1.dmg" length="6390973" type="application/octet-stream" sparkle:edSignature="tPBd77UrramEeHKMFax8v4xh7cMJaC9zkEESM4XAVap7W9w4PSlcS4hoGE9TN+Pni8Qrx5RvJic3AB0sR803AQ=="/>
+        </item>
+        <item>
             <title>1.0.0</title>
             <pubDate>Fri, 28 Aug 2026 12:35:45 +0530</pubDate>
             <sparkle:version>1</sparkle:version>
