@@ -3,6 +3,14 @@
     <channel>
         <title>Dottie</title>
         <item>
+            <title>1.1.5</title>
+            <pubDate>Sun, 30 Aug 2026 18:59:40 +0530</pubDate>
+            <sparkle:version>11</sparkle:version>
+            <sparkle:shortVersionString>1.1.5</sparkle:shortVersionString>
+            <sparkle:minimumSystemVersion>14.0</sparkle:minimumSystemVersion>
+            <enclosure url="https://game-pac.com/downloads/Dottie-1.1.5.dmg" length="3016933" type="application/octet-stream" sparkle:edSignature="rvp1mZ3RYT/MAXKPYkmKenlf3/hndGvUajMarKaq/brdDxclf3JaDNMTnN2ZGAydlHlv50qZBiDIeIi+VWSqBQ=="/>
+        </item>
+        <item>
             <title>1.1.4</title>
             <pubDate>Sun, 30 Aug 2026 15:45:41 +0530</pubDate>
             <sparkle:version>10</sparkle:version>

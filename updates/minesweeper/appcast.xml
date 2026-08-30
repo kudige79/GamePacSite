@@ -3,6 +3,14 @@
     <channel>
         <title>Mine Sweeper</title>
         <item>
+            <title>1.1.6</title>
+            <pubDate>Sun, 30 Aug 2026 18:37:03 +0530</pubDate>
+            <sparkle:version>21</sparkle:version>
+            <sparkle:shortVersionString>1.1.6</sparkle:shortVersionString>
+            <sparkle:minimumSystemVersion>14.0</sparkle:minimumSystemVersion>
+            <enclosure url="https://game-pac.com/downloads/MineSweeper-1.1.6.dmg" length="4505720" type="application/octet-stream" sparkle:edSignature="Rm8BahckZ+EiaRm8w7cxUdmJ2daA673isHZwF2Bzo5by+9C7PiOVSJOmhmFsWxPIu4XlTBnMXVuM56sSPDlyDg=="/>
+        </item>
+        <item>
             <title>1.1.5</title>
             <pubDate>Sun, 30 Aug 2026 15:44:13 +0530</pubDate>
             <sparkle:version>20</sparkle:version>
