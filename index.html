@@ -47,7 +47,7 @@
       <nav aria-label="Primary navigation">
         <a href="#games">Games</a>
         <a href="#collection">One More Round</a>
-        <a href="#launcher">Coming Soon</a>
+        <a href="#launcher">Game Pac app</a>
       </nav>
     </header>
 
@@ -285,26 +285,56 @@
         </div>
       </section>
 
-      <section class="launcher-teaser" id="launcher" aria-labelledby="launcher-title">
-        <div class="launcher-visual" aria-hidden="true">
-          <picture class="launcher-mark">
-            <source srcset="./assets/game-pac-mark-dark.png" media="(prefers-color-scheme: dark)">
-            <img src="./assets/game-pac-mark-light.png" alt="" width="112" height="112">
-          </picture>
-          <div class="launcher-icons">
-            <img src="./assets/minesweeper-icon.png" alt="" width="44" height="44">
-            <img src="./assets/dottie-icon.png" alt="" width="44" height="44">
-            <img src="./assets/tilly-icon.png" alt="" width="44" height="44">
-            <img src="./assets/suki-icon.png" alt="" width="44" height="44">
+      <section class="launcher-section" id="launcher" aria-labelledby="launcher-title">
+        <div class="launcher-heading">
+          <div class="launcher-copy">
+            <p class="eyebrow">Game Pac for Mac</p>
+            <h2 id="launcher-title">Your collection.<br>One place to play.</h2>
+            <p class="launcher-description">
+              Install, verify, update, and launch your games from the Game Pac app. Pick your next round from one collection.
+            </p>
+            <p class="launcher-roster">
+              Available individually: <a href="#minesweeper">Mine Sweeper</a>,
+              <a href="#dottie">Dottie</a>, <a href="#tilly">Tilly</a>, and
+              <a href="#suki">Suki</a>.
+              <span>Shatranj · coming soon.</span>
+            </p>
           </div>
+
+          <!-- LAUNCHER RELEASE: the only block to edit when the app ships.
+               Replace the disabled button with an anchor using the same classes,
+               download, and the verified DMG URL as href. Replace the status text
+               with the released version and remove the unavailable sentence.
+               Keep the requirements and aria-describedby. Do not add a URL yet. -->
+          <div class="launcher-download">
+            <p class="coming-chip" id="launcher-release-status">Coming soon</p>
+            <button class="button button-primary launcher-download-button" type="button" disabled
+              aria-describedby="launcher-release-status launcher-requirements">Download Game Pac</button>
+            <p class="requirements" id="launcher-requirements">macOS 14.0 or later</p>
+            <p class="launcher-availability">The Game Pac app is not available to download yet.</p>
+          </div>
+          <!-- END LAUNCHER RELEASE -->
         </div>
-        <div>
-          <p class="eyebrow">Next unlock</p>
-          <h2 id="launcher-title">All four games. One place to play.</h2>
-          <p>
-            The upcoming Game Pac app brings the whole collection together, so your next round is never far away.
-          </p>
-          <span class="coming-chip">Game Pac app · coming soon</span>
+
+        <figure class="launcher-preview launcher-preview-main">
+          <img src="./assets/launcher-arcade.jpg"
+            alt="Game Pac in the ARCADE theme, with Dottie featured, Mine Sweeper, Tilly and Suki ready to play, and Shatranj marked coming soon"
+            width="1440" height="880" loading="lazy" decoding="async">
+          <figcaption>One collection, ready for your next round. ARCADE theme preview; versions and statuses shown are examples.</figcaption>
+        </figure>
+        <div class="launcher-preview-grid">
+          <figure class="launcher-preview">
+            <img src="./assets/launcher-states-arcade.jpg"
+              alt="ARCADE status preview: Dottie verifying a download, Mine Sweeper showing a verification failure with Retry, Tilly showing a system requirement, and Suki showing an unavailable update feed"
+              width="1100" height="672" loading="lazy" decoding="async">
+            <figcaption><strong>Follow each download.</strong> See verification progress and when a game needs attention.</figcaption>
+          </figure>
+          <figure class="launcher-preview">
+            <img src="./assets/launcher-detail-arcade.jpg"
+              alt="ARCADE detail preview for Dottie, showing its description, installed and latest versions, minimum macOS version, and an Update action"
+              width="1100" height="672" loading="lazy" decoding="async">
+            <figcaption><strong>See what’s next.</strong> Check game details and available updates in one place.</figcaption>
+          </figure>
         </div>
       </section>
     </main>
@@ -314,11 +344,12 @@
         <p class="footer-signoff">Game Pac — clear, chase, merge, solve, repeat.</p>
         <p>Copyright © 2026 Panduranga Shenoy Kudige. All rights reserved.</p>
       </div>
-      <nav aria-label="More about each game">
+      <nav aria-label="Games and the Game Pac app">
         <a href="#minesweeper">Mine Sweeper</a>
         <a href="#dottie">Dottie</a>
         <a href="#tilly">Tilly</a>
         <a href="#suki">Suki</a>
+        <a href="#launcher">Game Pac app</a>
       </nav>
     </footer>
   </body>

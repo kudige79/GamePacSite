@@ -140,3 +140,36 @@ The migration build switches to the canonical feed under `updates/`. A later
 verification build is advertised only there, proving the second updater hop no
 longer depends on the relay. For a bridge release, publish and verify the site
 DMG and canonical site appcast first; publish the frozen relay appcast last.
+
+## Game Pac launcher — prepared, not released
+
+The `#launcher` section uses the launcher's approved ARCADE previews and keeps
+its download button natively disabled. The four individually released games
+remain linked; Shatranj is coming soon. No launcher DMG URL is present.
+
+**Release edit point:** in `index.html`, find `<!-- LAUNCHER RELEASE:` and edit
+only the block through `<!-- END LAUNCHER RELEASE -->` to activate the download:
+
+1. Replace the disabled `<button>` with an `<a>` that keeps its classes and
+   `aria-describedby`, has `download`, and uses the real, verified DMG URL as
+   `href`. Remove `type` and `disabled`; use the matching closing `</a>`.
+2. Replace “Coming soon” in `#launcher-release-status` with the released version.
+3. Remove the `.launcher-availability` sentence. Keep macOS 14.0 requirements.
+
+Keep it disabled until the release artifact exists. Verify the URL and rendered
+light/dark download state before publishing. Navigation and surrounding copy
+are evergreen; no redesign or JavaScript is needed to activate the block.
+
+To refresh **only** the launcher screenshots from read-only source previews:
+
+```bash
+zsh Scripts/sync-launcher-assets.sh
+```
+
+Override `GAMEPAC_PREVIEW_DIR` if the source `GamePac/Previews` lives elsewhere.
+The script reads `clubhouse-arcade.png`, `clubhouse-states-arcade.png`, and
+`clubhouse-detail-arcade.png`; it never regenerates or changes source files.
+It exports JPEGs at quality 82, 1440 px wide for the overview and 1100 px for
+supporting images, each capped at 300 KiB. Existing game assets are untouched.
+The screenshot versions and failure/system-requirement states are illustrative
+preview fixtures, not current download metadata.
