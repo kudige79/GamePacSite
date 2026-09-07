@@ -1,0 +1,4 @@
+# Runtime integrity checks cover exact bytes, including catalog whitespace.
+/catalog.json -text -filter -ident
+/catalog.json.sig -text -filter -ident
+/icons/*.png -text -filter -ident
