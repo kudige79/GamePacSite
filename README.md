@@ -174,8 +174,8 @@ DMG and canonical site appcast first; publish the frozen relay appcast last.
 ## Game Pac launcher — released
 
 The `#launcher` section uses the launcher's approved ARCADE previews and links
-the released app: Game Pac version 1.0.0, build 2, released 2026-09-09, at
-<https://game-pac.com/downloads/GamePac-1.0.0.dmg>. The four individually
+the released app: Game Pac version 1.0.1, build 3, released 2026-09-09, at
+<https://game-pac.com/downloads/GamePac-1.0.1.dmg>. The four individually
 released games remain linked; Shatranj is coming soon.
 
 **Release edit point:** in `index.html`, find `<!-- LAUNCHER RELEASE:` and edit
