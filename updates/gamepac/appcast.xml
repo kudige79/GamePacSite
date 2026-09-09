@@ -3,6 +3,14 @@
     <channel>
         <title>Game Pac</title>
         <item>
+            <title>1.0.1</title>
+            <pubDate>Wed, 09 Sep 2026 21:58:19 +0400</pubDate>
+            <sparkle:version>3</sparkle:version>
+            <sparkle:shortVersionString>1.0.1</sparkle:shortVersionString>
+            <sparkle:minimumSystemVersion>14.0</sparkle:minimumSystemVersion>
+            <enclosure url="https://game-pac.com/downloads/GamePac-1.0.1.dmg" length="9775368" type="application/octet-stream" sparkle:edSignature="ZMCPxvVKIMUwmAqmdcSN5oICz4OvJ35wJ61iqQw6+m3Wr17tKTTYD9etLD6lL7TNj4gilFRUOfFLG5DDzWM2Ag=="/>
+        </item>
+        <item>
             <title>1.0.0</title>
             <pubDate>Wed, 09 Sep 2026 16:51:51 +0400</pubDate>
             <sparkle:version>2</sparkle:version>
