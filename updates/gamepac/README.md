@@ -1,13 +1,12 @@
 # Game Pac launcher update channel
 
-This directory reserves `https://game-pac.com/updates/gamepac/appcast.xml`.
-There is intentionally no appcast here until the real release exists.
+This directory holds `appcast.xml`, the Game Pac launcher's live Sparkle feed
+at `https://game-pac.com/updates/gamepac/appcast.xml`.
 
-The owner-generated `GamePac/dist/appcast.xml` belongs at `appcast.xml` in
-this directory. First publish every versioned DMG it references under the
-site's root `downloads/` directory and verify the live HTTPS responses,
-exact bytes, lengths and Sparkle signatures. Only then publish the feed.
-Never invent an enclosure URL, version, signature or empty placeholder feed.
+Before the feed changes, every enclosure must already be live under the site's
+root `downloads/` directory and verified over HTTPS for exact bytes, lengths
+and Sparkle signatures. Never remove published items or replace the feed with
+a placeholder.
 
-Follow the owner-only publication sequence in
+Follow the publication sequence in
 [`LAUNCHER-PREPARATION.md`](../../LAUNCHER-PREPARATION.md).
