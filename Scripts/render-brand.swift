@@ -190,9 +190,16 @@ let social = makePNG(width: 1200, height: 630) { rect in
         .font: roundedFont(size: 96, weight: .bold),
         .foregroundColor: NSColor.white
     ]
+    let hookColor = NSColor(srgbRed: 143.0 / 255.0, green: 194.0 / 255.0, blue: 1, alpha: 1)
+    var hookSize: CGFloat = 36
+    let hookText = "Four games. One app to play."
+    while hookSize > 24,
+          (hookText as NSString).size(withAttributes: [.font: roundedFont(size: hookSize, weight: .bold)]).width > 620 {
+        hookSize -= 1
+    }
     let hookStyle: [NSAttributedString.Key: Any] = [
-        .font: roundedFont(size: 36, weight: .bold),
-        .foregroundColor: NSColor(srgbRed: 143.0 / 255.0, green: 194.0 / 255.0, blue: 1, alpha: 1)
+        .font: roundedFont(size: hookSize, weight: .bold),
+        .foregroundColor: hookColor
     ]
     let captionStyle: [NSAttributedString.Key: Any] = [
         .font: NSFont.systemFont(ofSize: 27, weight: .medium),
@@ -200,8 +207,8 @@ let social = makePNG(width: 1200, height: 630) { rect in
     ]
 
     NSString(string: "Game Pac").draw(at: NSPoint(x: 78, y: 372), withAttributes: titleStyle)
-    NSString(string: "Clear. Outrun. Merge. Solve.").draw(at: NSPoint(x: 84, y: 300), withAttributes: hookStyle)
-    NSString(string: "Four games. Four ways\nto chase one more round.").draw(
+    NSString(string: hookText).draw(at: NSPoint(x: 84, y: 300), withAttributes: hookStyle)
+    NSString(string: "Install, verify, update, and launch\nyour collection of Mac games.").draw(
         in: NSRect(x: 87, y: 190, width: 570, height: 92),
         withAttributes: captionStyle
     )
