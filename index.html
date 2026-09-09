@@ -301,17 +301,16 @@
             </p>
           </div>
 
-          <!-- LAUNCHER RELEASE: the only block to edit when the app ships.
-               Replace the disabled button with an anchor using the same classes,
-               download, and the verified DMG URL as href. Replace the status text
-               with the released version and remove the unavailable sentence.
-               Keep the requirements and aria-describedby. Do not add a URL yet. -->
+          <!-- LAUNCHER RELEASE: the only block to edit when a new launcher ships.
+               Update the anchor's href to the new verified DMG URL and the status
+               text to the new version. Keep the classes, download attribute,
+               requirements, and aria-describedby. -->
           <div class="launcher-download">
-            <p class="coming-chip" id="launcher-release-status">Coming soon</p>
-            <button class="button button-primary launcher-download-button" type="button" disabled
-              aria-describedby="launcher-release-status launcher-requirements">Download Game Pac</button>
+            <p class="coming-chip" id="launcher-release-status">Version 1.0.0</p>
+            <a class="button button-primary launcher-download-button" download
+              href="https://game-pac.com/downloads/GamePac-1.0.0.dmg"
+              aria-describedby="launcher-release-status launcher-requirements">Download Game Pac</a>
             <p class="requirements" id="launcher-requirements">macOS 14.0 or later</p>
-            <p class="launcher-availability">The Game Pac app is not available to download yet.</p>
           </div>
           <!-- END LAUNCHER RELEASE -->
         </div>

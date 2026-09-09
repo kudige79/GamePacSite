@@ -1,7 +1,7 @@
 # Game Pac website
 
 The one-page home for the Game Pac collection: Mine Sweeper, Dottie, Tilly,
-Suki, and the forthcoming Game Pac launcher. It is hand-authored HTML and CSS
+Suki, and the Game Pac launcher. It is hand-authored HTML and CSS
 with no framework, build step, external font, analytics, cookies, or
 JavaScript.
 
@@ -141,24 +141,25 @@ verification build is advertised only there, proving the second updater hop no
 longer depends on the relay. For a bridge release, publish and verify the site
 DMG and canonical site appcast first; publish the frozen relay appcast last.
 
-## Game Pac launcher — prepared, not released
+## Game Pac launcher — released
 
-The `#launcher` section uses the launcher's approved ARCADE previews and keeps
-its download button natively disabled. The four individually released games
-remain linked; Shatranj is coming soon. No launcher DMG URL is present.
+The `#launcher` section uses the launcher's approved ARCADE previews and links
+the released app: Game Pac version 1.0.0, build 2, released 2026-09-09, at
+<https://game-pac.com/downloads/GamePac-1.0.0.dmg>. The four individually
+released games remain linked; Shatranj is coming soon.
 
 **Release edit point:** in `index.html`, find `<!-- LAUNCHER RELEASE:` and edit
-only the block through `<!-- END LAUNCHER RELEASE -->` to activate the download:
+only the block through `<!-- END LAUNCHER RELEASE -->` for each new launcher
+release:
 
-1. Replace the disabled `<button>` with an `<a>` that keeps its classes and
-   `aria-describedby`, has `download`, and uses the real, verified DMG URL as
-   `href`. Remove `type` and `disabled`; use the matching closing `</a>`.
-2. Replace “Coming soon” in `#launcher-release-status` with the released version.
-3. Remove the `.launcher-availability` sentence. Keep macOS 14.0 requirements.
+1. Point the download anchor's `href` at the new verified DMG URL, keeping its
+   classes, `download`, and `aria-describedby`.
+2. Update the version in `#launcher-release-status`.
+3. Keep the macOS requirements line current.
 
-Keep it disabled until the release artifact exists. Verify the URL and rendered
-light/dark download state before publishing. Navigation and surrounding copy
-are evergreen; no redesign or JavaScript is needed to activate the block.
+Verify the URL and rendered light/dark download state before publishing.
+Navigation and surrounding copy are evergreen; no redesign or JavaScript is
+needed to update the block.
 
 To refresh **only** the launcher screenshots from read-only source previews:
 
