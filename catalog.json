@@ -1,0 +1,67 @@
+{
+  "schemaVersion": 1,
+  "catalogVersion": 1,
+  "minimumLauncherBuild": 1,
+  "games": [
+    {
+      "id": "minesweeper",
+      "name": "Mine Sweeper",
+      "tagline": "Classic minesweeping, four ways.",
+      "description": "The collection's first title. Clear the board without setting off a mine — four difficulties, four themes, best times per setting.",
+      "bundleId": "com.minesweeper.app",
+      "appcastURL": "https://game-pac.com/updates/minesweeper/appcast.xml",
+      "minSystemVersion": "14.0",
+      "iconURL": "https://game-pac.com/icons/minesweeper.png",
+      "iconSHA256": "714ffb68094ab855d037c558b006c306dae2235525463dc2bb79f3b7cd7f0b58",
+      "released": true
+    },
+    {
+      "id": "dottie",
+      "name": "Dottie",
+      "tagline": "Outrun the ghosts, clear the maze.",
+      "description": "The collection's maze-chase. Guide Dottie through the corridors, sweep every pellet, and turn the tables on the four ghosts — four themes, one arcade heart.",
+      "bundleId": "com.gamepac.dottie",
+      "appcastURL": "https://game-pac.com/updates/dottie/appcast.xml",
+      "minSystemVersion": "14.0",
+      "iconURL": "https://game-pac.com/icons/dottie.png",
+      "iconSHA256": "1635d294f402234e5948e9fc7ad8dafd60c40a306dc502b5148a7e9deab9ab88",
+      "released": true
+    },
+    {
+      "id": "tilly",
+      "name": "Tilly",
+      "tagline": "Slide the tiles, grow the numbers.",
+      "description": "The collection's sliding-merge puzzle. Every move slides the whole board; matching tiles merge and double. Chase the biggest tile you can build.",
+      "bundleId": "com.gamepac.tilly",
+      "appcastURL": "https://game-pac.com/updates/tilly/appcast.xml",
+      "minSystemVersion": "14.0",
+      "iconURL": "https://game-pac.com/icons/tilly.png",
+      "iconSHA256": "4798d48fd68c32efa5ad8915b40f856e56e736a2774cd216b7e4af28da36a705",
+      "released": true
+    },
+    {
+      "id": "suki",
+      "name": "Suki",
+      "tagline": "Sudoku, calm and exact.",
+      "description": "The collection's sudoku. Clean grids, honest difficulty, notes when you want them — a puzzle that stays out of its own way.",
+      "bundleId": "com.gamepac.suki",
+      "appcastURL": "https://game-pac.com/updates/suki/appcast.xml",
+      "minSystemVersion": "14.0",
+      "iconURL": "https://game-pac.com/icons/suki.png",
+      "iconSHA256": "e8a2966c534ab4775440dfae8e01c9b704fd11d839e830fe81fadf2a31300050",
+      "released": true
+    },
+    {
+      "id": "woozy",
+      "name": "Woozy",
+      "tagline": "Hold steady.",
+      "description": "The collection's balance game, now in development. Keep Woozy upright as the floor stops cooperating. Staged ahead of its first release.",
+      "bundleId": "com.gamepac.woozy",
+      "appcastURL": "https://game-pac.com/updates/woozy/appcast.xml",
+      "minSystemVersion": "14.0",
+      "iconURL": "https://game-pac.com/icons/woozy.png",
+      "iconSHA256": "214a8ba184eb2082667bcdb9ab4eda2eab06ed1646a7e0638eeb2c407506dfd0",
+      "released": false
+    }
+  ]
+}
