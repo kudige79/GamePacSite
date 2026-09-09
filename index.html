@@ -33,8 +33,8 @@
     <link rel="icon" type="image/png" href="./assets/favicon.png">
     <link rel="stylesheet" href="./style.css">
   </head>
-  <body>
-    <a class="skip-link" href="#games">Skip to games</a>
+  <body id="top">
+    <a class="skip-link" href="#main-content">Skip to content</a>
 
     <header class="site-header">
       <a class="brand" href="#top" aria-label="Game Pac home">
@@ -47,51 +47,69 @@
       <nav aria-label="Primary navigation">
         <a href="#games">Games</a>
         <a href="#collection">One More Round</a>
-        <a href="#launcher">Game Pac app</a>
+        <a class="button button-primary" href="#launcher-download">Download Game Pac</a>
       </nav>
     </header>
 
-    <main id="main-content">
-      <section class="hero" id="top" aria-labelledby="hero-title">
-        <div class="hero-copy">
-          <p class="eyebrow">Four games. One more go.</p>
-          <h1 id="hero-title">Game Pac</h1>
-          <p class="hero-tagline">Clear. Outrun. Merge. Solve.</p>
-          <p class="hero-pitch">
-            Clear the minefield, outsmart the chase, build something huge, or solve a fresh number grid. Pick a game and go again.
-          </p>
-          <div class="hero-actions">
-            <a class="button button-primary" href="#games">Choose a Game</a>
-            <span>macOS 14 or later</span>
+    <main id="main-content" tabindex="-1">
+      <section class="launcher-section" id="launcher" aria-labelledby="launcher-title">
+        <div class="launcher-heading">
+          <div class="launcher-copy">
+            <p class="eyebrow">Game Pac for Mac</p>
+            <h1 id="launcher-title">Your collection.<br>One place to play.</h1>
+            <p class="launcher-description">
+              Install, verify, update, and launch your games from the Game Pac app. Pick your next round from one collection.
+            </p>
+            <p class="launcher-roster">
+              Available individually: <a href="#minesweeper">Mine Sweeper</a>,
+              <a href="#dottie">Dottie</a>, <a href="#tilly">Tilly</a>, and
+              <a href="#suki">Suki</a>.
+              <span>Shatranj · coming soon.</span>
+            </p>
           </div>
+
+          <!-- LAUNCHER RELEASE: the only block to edit when a new launcher ships.
+               Update the anchor's href to the new verified DMG URL and the status
+               text to the new version. Keep the classes, download attribute,
+               requirements, and aria-describedby. -->
+          <div class="launcher-download" id="launcher-download">
+            <p class="release-chip" id="launcher-release-status">Version 1.0.0</p>
+            <a class="button button-primary launcher-download-button" download
+              href="https://game-pac.com/downloads/GamePac-1.0.0.dmg"
+              aria-describedby="launcher-release-status launcher-requirements">Download Game Pac</a>
+            <p class="requirements" id="launcher-requirements">macOS 14.0 or later</p>
+            <p class="launcher-availability">Available now for Mac.</p>
+          </div>
+          <!-- END LAUNCHER RELEASE -->
         </div>
 
-        <div class="hero-showcase" aria-label="Choose a Game Pac title">
-          <span class="maze-trail" aria-hidden="true"></span>
-          <a class="hero-game hero-game-minesweeper" href="#minesweeper">
-            <img src="./assets/minesweeper-icon.png" alt="" width="128" height="128">
-            <span><small>Clear</small><strong>Mine Sweeper</strong></span>
-          </a>
-          <a class="hero-game hero-game-dottie" href="#dottie">
-            <img src="./assets/dottie-icon.png" alt="" width="144" height="144">
-            <span><small>Chase</small><strong>Dottie</strong></span>
-          </a>
-          <a class="hero-game hero-game-tilly" href="#tilly">
-            <img src="./assets/tilly-icon.png" alt="" width="128" height="128">
-            <span><small>Merge</small><strong>Tilly</strong></span>
-          </a>
-          <a class="hero-game hero-game-suki" href="#suki">
-            <img src="./assets/suki-icon.png" alt="" width="128" height="128">
-            <span><small>Solve</small><strong>Suki</strong></span>
-          </a>
+        <figure class="launcher-preview launcher-preview-main">
+          <img src="./assets/launcher-arcade.jpg"
+            alt="Game Pac in the ARCADE theme, with Dottie featured, Mine Sweeper, Tilly and Suki ready to play, and Shatranj marked coming soon"
+            width="1440" height="880" fetchpriority="high" decoding="async">
+          <figcaption>One collection, ready for your next round. ARCADE theme preview; versions and statuses shown are examples.</figcaption>
+        </figure>
+        <div class="launcher-preview-grid">
+          <figure class="launcher-preview">
+            <img src="./assets/launcher-states-arcade.jpg"
+              alt="ARCADE status preview: Dottie verifying a download, Mine Sweeper showing a verification failure with Retry, Tilly showing a system requirement, and Suki showing an unavailable update feed"
+              width="1100" height="672" loading="lazy" decoding="async">
+            <figcaption><strong>Follow each download.</strong> See verification progress and when a game needs attention.</figcaption>
+          </figure>
+          <figure class="launcher-preview">
+            <img src="./assets/launcher-detail-arcade.jpg"
+              alt="ARCADE detail preview for Dottie, showing its description, installed and latest versions, minimum macOS version, and an Update action"
+              width="1100" height="672" loading="lazy" decoding="async">
+            <figcaption><strong>See what’s next.</strong> Check game details and available updates in one place.</figcaption>
+          </figure>
         </div>
       </section>
 
       <section class="games-section" id="games" aria-labelledby="games-title">
         <div class="section-heading">
-          <p class="eyebrow">Choose your challenge</p>
-          <h2 id="games-title">Which one has your name on it?</h2>
-          <p>Pick a board, chase a score, and tell yourself this is the last run.</p>
+          <p class="eyebrow">Four games. One more go.</p>
+          <h2 id="games-title">Prefer one game?</h2>
+          <p>Each is available on its own. Clear the minefield, outsmart the chase, build something huge, or solve a fresh number grid.</p>
         </div>
 
         <article class="game-card game-card-minesweeper" id="minesweeper">
@@ -282,58 +300,6 @@
             <h3>Go one more time</h3>
             <p>Every finish, close call, and bad move gives you a reason to hit restart.</p>
           </div>
-        </div>
-      </section>
-
-      <section class="launcher-section" id="launcher" aria-labelledby="launcher-title">
-        <div class="launcher-heading">
-          <div class="launcher-copy">
-            <p class="eyebrow">Game Pac for Mac</p>
-            <h2 id="launcher-title">Your collection.<br>One place to play.</h2>
-            <p class="launcher-description">
-              Install, verify, update, and launch your games from the Game Pac app. Pick your next round from one collection.
-            </p>
-            <p class="launcher-roster">
-              Available individually: <a href="#minesweeper">Mine Sweeper</a>,
-              <a href="#dottie">Dottie</a>, <a href="#tilly">Tilly</a>, and
-              <a href="#suki">Suki</a>.
-              <span>Shatranj · coming soon.</span>
-            </p>
-          </div>
-
-          <!-- LAUNCHER RELEASE: the only block to edit when a new launcher ships.
-               Update the anchor's href to the new verified DMG URL and the status
-               text to the new version. Keep the classes, download attribute,
-               requirements, and aria-describedby. -->
-          <div class="launcher-download">
-            <p class="coming-chip" id="launcher-release-status">Version 1.0.0</p>
-            <a class="button button-primary launcher-download-button" download
-              href="https://game-pac.com/downloads/GamePac-1.0.0.dmg"
-              aria-describedby="launcher-release-status launcher-requirements">Download Game Pac</a>
-            <p class="requirements" id="launcher-requirements">macOS 14.0 or later</p>
-          </div>
-          <!-- END LAUNCHER RELEASE -->
-        </div>
-
-        <figure class="launcher-preview launcher-preview-main">
-          <img src="./assets/launcher-arcade.jpg"
-            alt="Game Pac in the ARCADE theme, with Dottie featured, Mine Sweeper, Tilly and Suki ready to play, and Shatranj marked coming soon"
-            width="1440" height="880" loading="lazy" decoding="async">
-          <figcaption>One collection, ready for your next round. ARCADE theme preview; versions and statuses shown are examples.</figcaption>
-        </figure>
-        <div class="launcher-preview-grid">
-          <figure class="launcher-preview">
-            <img src="./assets/launcher-states-arcade.jpg"
-              alt="ARCADE status preview: Dottie verifying a download, Mine Sweeper showing a verification failure with Retry, Tilly showing a system requirement, and Suki showing an unavailable update feed"
-              width="1100" height="672" loading="lazy" decoding="async">
-            <figcaption><strong>Follow each download.</strong> See verification progress and when a game needs attention.</figcaption>
-          </figure>
-          <figure class="launcher-preview">
-            <img src="./assets/launcher-detail-arcade.jpg"
-              alt="ARCADE detail preview for Dottie, showing its description, installed and latest versions, minimum macOS version, and an Update action"
-              width="1100" height="672" loading="lazy" decoding="async">
-            <figcaption><strong>See what’s next.</strong> Check game details and available updates in one place.</figcaption>
-          </figure>
         </div>
       </section>
     </main>
