@@ -7,8 +7,9 @@ JavaScript.
 
 ## Refresh the assets
 
-Keep `GamePacSite`, `MineSweeper`, `Dottie`, `Tilly`, and `Suki` as sibling
-directories under the same `Developer` directory, then run:
+Keep `GamePacSite`, `MineSweeper`, `Dottie`, `Tilly`, `Suki`, and
+`GamePacBriefs` as sibling directories under the same `Developer` directory,
+then run:
 
 ```bash
 ./Scripts/sync-assets.sh
@@ -23,7 +24,8 @@ GAMEPAC_DEVELOPER_ROOT=/path/to/Developer ./Scripts/sync-assets.sh
 
 The script copies the committed app icons and each title's approved Modern
 image, downsamples them for the web, and regenerates the Game Pac mark,
-favicon, and social-preview image. It is deterministic and safe to rerun after
+favicon, Apple touch icon, and social-preview image from the approved
+arcade-cabinet artwork. It is deterministic and safe to rerun after
 source asset changes, including an icon redesign.
 
 It overwrites `assets/` in place. Rerun it whenever a game's committed icon or
@@ -46,6 +48,34 @@ Tilly's light Modern midgame fixture uses the renderer's AppKit-hosted path.
 The ordinary `ImageRenderer` path gave that one system-material surface a warm
 cast the running app never shows; the hosted path preserves the app's neutral
 grey. Do not point the site back at a separately rendered replacement.
+
+### Brand assets: the arcade mark
+
+The header mark, favicon, Apple touch icon, and social-preview image all come
+from one approved source: the arcade-cabinet master at
+`GamePacBriefs/icon-2026-09-08/MASTER.png` (drawn by Codex, 2026-09-08; see
+the `README.md` and `CUTTER-NOTES.md` beside it). To refresh only those five
+brand outputs without touching the game assets:
+
+```bash
+./Scripts/sync-brand-assets.sh
+```
+
+`GAMEPAC_ICON_SOURCE` overrides the master path; `GAMEPAC_DEVELOPER_ROOT`
+resolves the sibling folders for an isolated clone. The script reads only the
+source master and the existing `assets/*-icon.png` game icons, renders into a
+temporary stage with `Scripts/render-brand.swift`, verifies dimensions
+(84×84 marks, 64×64 favicon, 180×180 touch icon, 1200×630 social) and
+per-file budgets (marks ≤ 30 KiB each, favicon ≤ 20 KiB, touch icon ≤
+100 KiB, social ≤ 300 KiB), then installs only the five named brand outputs.
+It never writes to the source artwork.
+
+The cabinet carries its own opaque dark rounded ground, which supplies
+contrast on both header themes, so one identical 84×84 image (displayed at
+42 px) serves both: `game-pac-mark-light.png` and `game-pac-mark-dark.png`
+are byte-identical on purpose. After changing the social image, re-scrape the
+URL in the Facebook Sharing Debugger and LinkedIn Post Inspector so cached
+link previews pick up the new card.
 
 ## Preview locally
 

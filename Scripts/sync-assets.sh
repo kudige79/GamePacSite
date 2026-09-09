@@ -23,6 +23,9 @@ SOURCES[dottie_shot]="$DEVELOPER_ROOT/Dottie/Previews/ready-modern.png"
 SOURCES[tilly_shot]="$DEVELOPER_ROOT/Tilly/Previews/midgame-modern.png"
 SOURCES[suki_shot]="$DEVELOPER_ROOT/Suki/docs/marketing/midgame-modern-live.png"
 
+ICON_SOURCE=${GAMEPAC_ICON_SOURCE:-"$DEVELOPER_ROOT/GamePacBriefs/icon-2026-09-08/MASTER.png"}
+SOURCES[arcade_icon]="$ICON_SOURCE"
+
 for source_file in "${SOURCES[@]}"; do
     if [[ ! -f "$source_file" ]]; then
         print -u2 "Missing required source asset: $source_file"
@@ -63,12 +66,12 @@ downsample_jpeg "${SOURCES[tilly_shot]}" "$STAGE_DIR/tilly-modern.jpg"
 downsample_jpeg "${SOURCES[suki_shot]}" "$STAGE_DIR/suki-modern.jpg"
 
 CLANG_MODULE_CACHE_PATH="$STAGE_DIR/module-cache" \
-    xcrun swift "$SCRIPT_DIR/render-brand.swift" "$STAGE_DIR"
+    xcrun swift "$SCRIPT_DIR/render-brand.swift" "$STAGE_DIR" "$ICON_SOURCE"
 
 generated_files=(
     minesweeper-icon.png dottie-icon.png tilly-icon.png suki-icon.png \
     minesweeper-modern.jpg dottie-modern.jpg tilly-modern.jpg suki-modern.jpg \
-    game-pac-mark-light.png game-pac-mark-dark.png favicon.png og-game-pac.png
+    game-pac-mark-light.png game-pac-mark-dark.png favicon.png apple-touch-icon.png og-game-pac.png
 )
 
 typeset -i total_bytes=0

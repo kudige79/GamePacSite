@@ -136,11 +136,6 @@ footer {
   text-decoration: none;
 }
 
-.brand img {
-  border-radius: 11px;
-  box-shadow: 0 6px 16px rgba(21, 32, 51, 0.13);
-}
-
 .site-header nav,
 footer nav {
   display: flex;
@@ -643,6 +638,23 @@ h3 {
   font-size: 15px;
 }
 
+.welcome-section {
+  max-width: 760px;
+  margin: 0 auto;
+  padding: 32px 0 24px;
+  text-align: center;
+}
+
+.welcome-section h1 {
+  font-size: clamp(38px, 5vw, 58px);
+}
+
+.welcome-intro {
+  margin-bottom: 0;
+  color: var(--muted);
+  font-size: 19px;
+}
+
 .launcher-section {
   margin: clamp(20px, 3vw, 40px) 0 110px;
   padding: clamp(28px, 5vw, 56px);
@@ -660,6 +672,10 @@ h3 {
   align-items: center;
   gap: clamp(24px, 4vw, 48px);
   margin-bottom: 32px;
+}
+
+.launcher-copy h2 {
+  font-size: clamp(32px, 3.6vw, 44px);
 }
 
 .launcher-description {
