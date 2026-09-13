@@ -28,7 +28,7 @@
       <img src="app-icon.png" alt="A Better Looking 2048 app icon" width="88" height="88">
       <p class="eyebrow">Game Pac</p>
       <h1>Privacy Policy</h1>
-      <p class="lede">A Better Looking 2048 for iPhone and iPad — last updated 12 September 2026.</p>
+      <p class="lede">A Better Looking 2048 for iPhone and iPad — last updated 13 September 2026.</p>
     </section>
 
     <section>
@@ -37,13 +37,20 @@
 
     <section>
       <h2>What the app stores on your device</h2>
-      <p>Your current game, best scores and game statistics are saved in a file on your device. Your preferences — difficulty, the Modern or Circuit theme, sound, the facts ticker and whether you have seen the welcome message — are kept in the app's settings on your device. That is everything the app stores.</p>
+      <p>Your current game, best scores and game statistics are saved in a file on your device. The saved game includes a run identifier and leaderboard eligibility information; when a run is bound to a connected player, it also stores the game-scoped Game Center player identifier for that association. These records are kept locally and may be included in a backup of your device; they are not sent to any developer server. What is submitted to Apple's Game Center service is described below. Your preferences — difficulty, the Modern or Circuit theme, sound, the facts ticker and whether you have seen the welcome message — are kept in the app's settings on your device.</p>
     </section>
 
     <section>
-      <h2>What the app itself sends: nothing</h2>
-      <p>The game itself does not connect to the internet. It has no accounts, no online leaderboards, no integrated analytics and no advertising, so your game data and preferences never leave your device through the app.</p>
-      <p>Two channels are separate from the app itself, and both can deliver real data to the developer: a support message you choose to send, and Apple's beta-testing and analytics reports. Both are described below.</p>
+      <h2>Game Center leaderboards (optional)</h2>
+      <p>The game offers optional Apple Game Center leaderboards. There is no separate in-app switch: when you are signed into Game Center, eligible play submits results as described below, and playing without signing in remains fully available. No developer account is required; Apple handles Game Center sign-in.</p>
+      <p>When you are signed in, eligible results are submitted to Apple together with the game mode/difficulty and your Game Center player. 2048 submits your score. Apple associates Game Center activity with your Apple Account, and your Game Center nickname, avatar and leaderboard entries can be visible to other Game Center users — see <a href="https://www.apple.com/legal/privacy/data/en/game-center/">Apple — Game Center &amp; Privacy</a>.</p>
+      <p>A run becomes associated with the player signed in at your first successful move; simply opening the app or a fresh board binds no one. If no one is signed in at that first move, the run remains a guest run and cannot be attached to a player later, and signing in never moves a guest run or another player's run to a different account. A saved run that was already validly bound can be continued by its original player. Saved games from before Game Center support, or without valid Game Center eligibility information, stay local.</p>
+      <p>Only successfully saved eligible end results are offered to Apple: when a run ends in a loss, or when you confirm replacing the current run with a new game or difficulty. Reaching the target tile and choosing Keep Going continues the same attempt, so winning alone is not a submission point. If saving a result fails, it stays local — a later save, relaunch or reconnection does not backfill it. Apple manages forwarding of submissions it has accepted while you were offline.</p>
+    </section>
+
+    <section>
+      <h2>Developer practices and reports</h2>
+      <p>The app itself has no developer gameplay servers, no integrated analytics, no advertising, no tracking, and no friends-list collection. Game Center submissions are handled by Apple's service, described above. Two channels are separate from the app itself, and both can deliver real data to the developer: a support message you choose to send, and Apple's beta-testing and analytics reports. Both are described below.</p>
     </section>
 
     <section>
@@ -68,7 +75,7 @@
 
     <section>
       <h2>How long data is kept</h2>
-      <p>Support messages and beta reports downloaded from Apple are used only to respond to you, or to fix and improve the app. They are kept only as long as necessary for that purpose and are then deleted, unless the law requires keeping them. You can ask for your support correspondence to be deleted at any time by emailing <a href="mailto:kudige@icloud.com">kudige@icloud.com</a>. Copies held by Apple — in TestFlight, App Store Connect or device backups — are controlled by Apple under its own policies.</p>
+      <p>Support messages and beta reports downloaded from Apple are used only to respond to you, or to fix and improve the app. They are kept only as long as necessary for that purpose and are then deleted, unless the law requires keeping them. You can ask for your support correspondence to be deleted at any time by emailing <a href="mailto:kudige@icloud.com">kudige@icloud.com</a>. Copies held by Apple — in Game Center, TestFlight, App Store Connect or device backups — are controlled by Apple under its own policies.</p>
     </section>
 
     <section>
@@ -78,13 +85,16 @@
 
     <section>
       <h2>Deleting your data</h2>
-      <p>Settings → Reset Statistics erases every best score, all career statistics and your best tile ever. Your current board is kept, including its finished or in-progress state, and your preferences — difficulty, theme, sound and facts — are not changed. Starting a New Game replaces the board, and the next run counts toward records again. Deleting the app removes the app's remaining local data from the device; data already inside an Apple backup is governed by Apple's backup settings.</p>
+      <p>Settings → Reset Statistics erases every best score, all career statistics and your best tile ever. Your current board is kept, including its finished or in-progress state, and your preferences — difficulty, theme, sound and facts — are not changed. Starting a New Game replaces the board, and the next run counts toward records again. Reset Statistics also makes the current run ineligible for leaderboards.</p>
+      <p>Reset Statistics is local only: it does not erase leaderboard entries already submitted to Apple Game Center, and neither does deleting the app. Apple manages its service data under its own policies — see <a href="https://www.apple.com/legal/privacy/data/en/game-center/">Apple — Game Center &amp; Privacy</a>.</p>
+      <p>Deleting the app removes the app's remaining local data from the device; data already inside an Apple backup is governed by Apple's backup settings.</p>
     </section>
 
     <section>
       <h2>Contact</h2>
-      <p>Questions about this policy or your data:</p>
+      <p>Questions about this policy or your data: email <a href="mailto:kudige@icloud.com">kudige@icloud.com</a>.</p>
       <p><a class="button" href="mailto:kudige@icloud.com">Email kudige@icloud.com</a></p>
+      <p>Support page: <a href="https://game-pac.com/a-better-looking-2048/support.html">game-pac.com/a-better-looking-2048/support.html</a></p>
     </section>
   </main>
 
@@ -94,7 +104,7 @@
       <a href="privacy.html">Privacy</a>
       <a href="../">Game Pac</a>
     </nav>
-    <p>A Better Looking 2048 — a Game Pac game. Last updated 12 September 2026.</p>
+    <p>A Better Looking 2048 — a Game Pac game. Last updated 13 September 2026.</p>
   </footer>
 </body>
 </html>
