@@ -1,0 +1,202 @@
+/* Scoped styles for A Better Looking Minesweeper support and privacy pages.
+   Loaded after ../style.css; everything below is scoped to
+   body.minesweeper-support-page so no other page is affected. */
+
+body.minesweeper-support-page .site-header,
+body.minesweeper-support-page main,
+body.minesweeper-support-page footer {
+  width: min(calc(100% - 40px), var(--content-width));
+}
+
+body.minesweeper-support-page .page-body {
+  max-width: 760px;
+  margin: 0 auto;
+  padding: 40px 0 64px;
+}
+
+body.minesweeper-support-page .app-heading {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: 16px;
+  margin-bottom: 14px;
+}
+
+body.minesweeper-support-page .app-heading img {
+  width: 72px;
+  height: 72px;
+  flex: 0 0 auto;
+  border: 1px solid var(--line);
+  border-radius: 22%;
+  box-shadow: 0 12px 28px rgba(21, 32, 51, 0.2);
+}
+
+body.minesweeper-support-page .app-heading .app-eyebrow {
+  margin: 0 0 6px;
+  color: var(--brand);
+  font-size: 13px;
+  font-weight: 850;
+  letter-spacing: 0.12em;
+  line-height: 1.2;
+  text-transform: uppercase;
+}
+
+body.minesweeper-support-page .app-heading h1 {
+  margin: 0;
+  font-size: clamp(30px, 6vw, 46px);
+  text-wrap: balance;
+}
+
+body.minesweeper-support-page .page-intro {
+  color: var(--muted);
+  font-size: 18px;
+}
+
+body.minesweeper-support-page h2 {
+  margin: 40px 0 14px;
+  font-size: clamp(24px, 3.4vw, 32px);
+}
+
+body.minesweeper-support-page h3 {
+  margin: 24px 0 8px;
+  font-size: 19px;
+  letter-spacing: -0.02em;
+}
+
+body.minesweeper-support-page p {
+  margin-bottom: 14px;
+}
+
+body.minesweeper-support-page ul {
+  margin: 0 0 16px;
+  padding-left: 22px;
+}
+
+body.minesweeper-support-page li {
+  margin-bottom: 8px;
+}
+
+body.minesweeper-support-page li:last-child {
+  margin-bottom: 0;
+}
+
+body.minesweeper-support-page .contact-card {
+  margin: 22px 0 6px;
+  padding: 24px;
+  border: 1px solid var(--line);
+  border-radius: var(--radius);
+  background: var(--surface);
+  box-shadow: var(--shadow-soft);
+}
+
+body.minesweeper-support-page .contact-card p {
+  margin-bottom: 14px;
+}
+
+body.minesweeper-support-page .contact-card p:last-of-type {
+  margin-bottom: 20px;
+}
+
+body.minesweeper-support-page .contact-card .button {
+  min-height: 48px;
+}
+
+body.minesweeper-support-page footer {
+  display: grid;
+  grid-template-columns: minmax(0, 1fr) auto;
+  align-items: center;
+  gap: 18px 40px;
+  padding: 34px 0 44px;
+  border-top: 1px solid var(--line);
+  color: var(--muted);
+  font-size: 14px;
+}
+
+body.minesweeper-support-page footer p {
+  margin-bottom: 0;
+}
+
+body.minesweeper-support-page footer nav {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: 8px 10px;
+}
+
+body.minesweeper-support-page footer nav a {
+  min-width: 44px;
+  min-height: 44px;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  padding: 7px 8px;
+  color: var(--muted);
+  font-size: 14px;
+  font-weight: 750;
+}
+
+body.minesweeper-support-page footer nav a:hover {
+  color: var(--brand);
+}
+
+@media (max-width: 680px) {
+  body.minesweeper-support-page .site-header,
+  body.minesweeper-support-page main,
+  body.minesweeper-support-page footer {
+    width: min(calc(100% - 28px), var(--content-width));
+  }
+
+  /* Keep Home / Support / Privacy reachable on small screens: undo the home
+     stylesheet's mobile hiding of non-button header nav links, on this page
+     only. */
+  body.minesweeper-support-page .site-header nav a:not(.button) {
+    display: inline-flex;
+  }
+
+  body.minesweeper-support-page .site-header {
+    min-height: 68px;
+    flex-wrap: wrap;
+    gap: 8px 16px;
+    padding: 10px 0;
+  }
+
+  body.minesweeper-support-page .site-header nav {
+    gap: 6px;
+  }
+
+  body.minesweeper-support-page .page-body {
+    padding: 26px 0 48px;
+  }
+
+  body.minesweeper-support-page .app-heading h1 {
+    font-size: clamp(26px, 7.5vw, 34px);
+  }
+
+  body.minesweeper-support-page .page-intro {
+    font-size: 16px;
+    line-height: 1.5;
+  }
+
+  body.minesweeper-support-page footer {
+    grid-template-columns: 1fr;
+  }
+}
+
+@media (prefers-color-scheme: dark) {
+  /* Shared .button-primary keeps white text, but dark mode redefines --brand to
+     the pale #78b7ff / #a1ceff, which would fail contrast against white. Use the
+     dark page ink for the CTA foreground in normal, hover, active, and focus. */
+  body.minesweeper-support-page .contact-card .button-primary,
+  body.minesweeper-support-page .contact-card .button-primary:hover,
+  body.minesweeper-support-page .contact-card .button-primary:active,
+  body.minesweeper-support-page .contact-card .button-primary:focus-visible {
+    color: var(--page);
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  body.minesweeper-support-page .button:hover,
+  body.minesweeper-support-page .button:active {
+    transform: none;
+  }
+}
